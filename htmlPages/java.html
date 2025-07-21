@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Cheetsheat</title>
+    <style>
+        @font-face {
+            font-family: 'Pacifico';
+            src: url('../fonts/Pacifico-Regular.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: "Andada";
+            src: url('../fonts/AndadaPro-Italic-VariableFont_wght.ttf')format('truetype');
+        }
+
+        @font-face {
+            font-family: "man";
+            src: url('../fonts/Manrope-VariableFont_wght.ttf')format('truetype');
+        }
+
+        * {
+            color: black;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Andada";
+            text-align: justify;
+
+        }
+
+        .top {
+            position: fixed;
+            height: 200px;
+            width: 100%;
+            z-index: 200;
+        }
+
+        .nav {
+            height: 80px;
+            background-color: dodgerblue;
+            font-size: 20px;
+            font-weight: 700;
+            border: 0.1px solid black;
+            border-top: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .right,
+        .left {
+            margin: 10px;
+            padding: 10px;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid white;
+            border: none;
+        }
+
+        .navbar li a:hover {
+            color: black;
+        }
+
+        .abdullah {
+            margin-top: 10px;
+            display: block;
+        }
+
+        .abd {
+            font-family: "Pacifico";
+            color: white;
+        }
+
+        .label {
+            background-color: lightgoldenrodyellow;
+            border-bottom: solid 5px dodgerblue;
+            display: flex;
+        }
+
+        .label .itemLabel {
+            padding: 8px;
+
+        }
+
+        .label .itemLabel:hover {
+            cursor: pointer;
+            background-color: rgb(232, 232, 187);
+        }
+
+        .hero {
+            display: flex;
+            font-size: 1.1rem;
+        }
+
+
+        .leftHero ul li {
+            list-style-type: none;
+            padding: 5px;
+            border: 0.5px solid black;
+        }
+
+        .leftHero ul li:first-child {
+            border-radius: 4px 4px 0px 0px;
+        }
+
+        .leftHero ul li:last-child {
+            border-radius: 0px 0px 4px 4px;
+        }
+
+        .leftHero ul li:hover {
+            cursor: pointer;
+            background-color: lightgoldenrodyellow;
+        }
+
+        .sidebar {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            width: 25%;
+            height: 120vh;
+            background-color: lightgoldenrodyellow;
+
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            box-shadow: 0px 0px 10px black;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar ul li:hover {
+            background-color: rgb(232, 232, 187);
+        }
+
+        .sidebar ul li {
+            margin: 7px;
+            padding: 7px;
+        }
+
+        .sidebar ul a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .main-content {
+            width: 75%;
+            padding-left: 10px;
+            padding-right: 40px;
+            margin-left: 30%;
+            padding-top: 140px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .image {
+            padding-bottom: 10px;
+        }
+
+        .h3-heading {
+            color: rgb(46, 42, 42);
+            margin: 10px 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .main-text {
+            font-family: 'man';
+            font-size: 1.1rem;
+        }
+
+        .imageCode {
+            padding-top: 10px;
+        }
+
+        .bold {
+            font-size: 1.3rem;
+            font-family: "Andada";
+            font-weight: 900;
+        }
+
+        .footer {
+            z-index: 300;
+            width: 100%;
+            margin-top: 50px;
+            height: 300px;
+            background-color: dodgerblue;
+
+        }
+
+        .right a {
+            text-decoration: none;
+            color: white;
+        }
+
+        body {
+            zoom: 90%;
+        }
+
+        .right {
+            display: flex;
+        }
+
+        .label a {
+            text-decoration: none;
+        }
+
+        @media (max-width: 900px) {
+
+            .sidebar,
+            .leftHero.sidebar {
+                display: none !important;
+            }
+
+            .main-content {
+                width: 100% !important;
+                margin-left: 0 !important;
+                padding-left: 2vw !important;
+                padding-right: 2vw !important;
+            }
+
+            .hero {
+                flex-direction: column !important;
+                align-items: stretch !important;
+            }
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+            margin: 10px;
+            color: white;
+        }
+
+        @media (max-width: 900px) {
+            .label {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                width: 100%;
+                background: dodgerblue;
+                z-index: 1000;
+            }
+
+            .label.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .left {
+                display: none !important;
+            }
+
+            .abd {
+                font-size: 1rem;
+            }
+
+            .right {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .label {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                width: 100%;
+                background: dodgerblue;
+                z-index: 1000;
+            }
+
+            .label a div {
+                color: white;
+            }
+
+
+            .label.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .main-content,
+            .file-container,
+            .hero-header {
+                padding-left: 2vw !important;
+                padding-right: 2vw !important;
+                margin-left: 0 !important;
+                width: 100% !important;
+                flex-direction: rows !important;
+                align-items: stretch !important;
+            }
+
+            .file-card {
+                width: 90vw;
+                height: auto;
+                min-width: 0;
+            }
+
+            .headery {
+                width: 95vw;
+                font-size: 1.1rem;
+                padding: 5px;
+            }
+
+            .footer,
+            .nav,
+            .top {
+                font-size: 1em;
+                flex-direction: column;
+                height: auto;
+            }
+
+            .right {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0;
+                padding: 5px;
+            }
+
+            .abd {
+                font-size: 1rem !important;
+            }
+
+            .file-card img {
+                width: 15%;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .abd {
+                font-size: 1rem !important;
+            }
+        }
+
+        img,
+        audio,
+        video,
+        iframe {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="nav">
+
+            <div class="right">
+                <a href="../index.html">
+                    <img src="../image/mainPageImage/home_12074276.png"
+                        style="border: 1px solid white; border-radius: 50%; padding: 2px;" height="50" width="50"
+                        alt="">
+                </a>
+                <div style="width: 70px;"></div>
+                <img src="../image/mainPageImage/abdullahNooristani.png" width="40" height="50"
+                    style=" margin-left:10px;border-radius: 10px;" alt="">
+                <div style="width: 10px;"></div>
+                <h2 class="abd"> Abdullah Nooristani</h2>
+                <div style="width: 70px;"></div>
+                <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+            </div>
+
+        </div>
+        <div class="label" id="labelMenu">
+            <a href="./html.html">
+                <div class="itemLabel">HTML CheatSheet</div>
+            </a>
+            <a href="./css.html">
+                <div class="itemLabel">CSS CheatSheet</div>
+            </a>
+            <a href="./js.html">
+                <div class="itemLabel">JavaScript CheatSheet</div>
+            </a>
+            <a href="./presentation.html">
+                <div class="itemLabel">Presentations</div>
+            </a>
+            <a href="./cplusplus.html">
+                <div class="itemLabel">C++ CheatSheet</div>
+            </a>
+            <a href="./java.html">
+                <div class="itemLabel">JAVA CheatSheet</div>
+            </a>
+            <a href="./DSAProject/dsaProject.html">
+                <div class="itemLabel">DSA Project</div>
+            </a>
+            <a href="./paperHomeworks.html">
+                <div class="itemLabel">DSA Paper Homeworks</div>
+            </a>
+
+            <a href="./WebProject/html/index.html" target="_blank">
+                <div class="itemLabel">WEB Project</div>
+            </a>
+            <a href="./paperHomeworks.html">
+                <div class="itemLabel">WEB Paper Homeworks</div>
+            </a>
+
+        </div>
+    </div>
+    <div class="hero">
+
+        <div class="leftHero sidebar">
+            <ul>
+                <a href="#top">
+                    <li>Java Overview and History</li>
+                </a>
+                <a href="#hello">
+                    <li>Java Hello World Program</li>
+                </a>
+                <a href="#basic">
+                    <li>Java very basic syntax</li>
+                </a>
+                <a href="#variables">
+                    <li>Java variables, data types, type casting, ...</li>
+                </a>
+                <a href="#input">
+                    <li>Java User Input, Java Comments</li>
+                </a>
+                <a href="#if">
+                    <li>Java Decision Making (if, else, switch)</li>
+                </a>
+                <a href="#loop">
+                    <li>Java Loops, and Loops statements</li>
+                </a>
+                <a href="#string">
+                    <li>Java Strings</li>
+                </a>
+                <a href="#class">
+                    <li>Java Classes, Objects, and Methods</li>
+                </a>
+                <a href="#constructor">
+                    <li>Java Constructors</li>
+                </a>
+                <a href="#inheritance">
+                    <li>Java Inheritance</li>
+                </a>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <h1>Java Cheetsheat and Basics Syntax</h1>
+                <div style="width: 50px;"></div>
+                <div class="image">
+                    <img src="../image/mainPageImage/java.png" height="90" width="90" alt="java Image">
+                </div>
+            </div>
+            <hr>
+            <h3 class="h3-heading" id="overview">Java Overview </h3>
+            <p class="main-text">Java programming language was originally developed by Sun Microsystems, which was
+                initiated by James Gosling and released in 1995 as a core component of Sun Microsystems' Java platform
+                (Java 1.0 [J2SE]).
+                The latest release of the Java Standard Edition is Java SE 23. With the advancement of Java and its
+                widespread popularity, multiple configurations were built to suit various types of platforms. For
+                example: J2EE for Enterprise Applications, J2ME for Mobile Applications.
+                The new J2 versions were renamed as Java SE, Java EE, and Java ME, respectively. Java is guaranteed to
+                be Write Once, Run Anywhere.</p>
+            <p class="main-text">Java is Object-Oriented, Platform Indpendent, Simple, Secure, Portable, Robust,
+                Intrepreted, HighPerformance, Dynamic</p><br>
+            <hr>
+            <h3 class="h3-heading">History of Java</h3>
+            <p class="main-text" id="hello">
+                History of Java
+                James Gosling initiated Java language project in June 1991 for use in one of his many set-top box
+                projects. The language, initially called 'Oak' after an oak tree that stood outside Gosling's office,
+                also went by the name 'Green' and ended up later being renamed as Java, from a list of random words.
+                Sun released the first public implementation as Java 1.0 in 1995. It promised Write Once, Run Anywhere
+                (WORA), providing no-cost run-times on popular platforms.
+                On 13 November, 2006, Sun released much of Java as free and open source software under the terms of the
+                GNU General Public License (GPL).
+                On 8 May, 2007, Sun finished the process, making all of Java's core code free and open-source, aside
+                from a small portion of code to which Sun did not hold the copyright.
+                Tools You Will Need
+            </p><br>
+            <hr>
+            <h3 class="h3-heading">
+                Java Hello World Program
+            </h3>
+            <p class="main-text">Printing "Hello World" on the output screen (console) is the first program in Java and
+                other programming languages.</p>
+            <div class="imageCode" id="basic">
+                <img src="../image/javaImages/javaHelloWorld.png" alt="">
+            </div><br>
+            <hr>
+            <h3 class="h3-heading">
+                Java Basic Syntax
+            </h3>
+            <dl>
+                <dt class="main-text"><span class="bold">Object</span>s - Objects have states and behaviors. Example: A
+                    dog has states - color, name, breed as well as behavior such as wagging their tail, barking, eating.
+                    An object is an instance of a class. </dt>
+                <dt class="main-text "><span class="bold">Class</span> - A class can be defined as a template/blueprint
+                    that describes the behavior/state that the object of its type supports.</dt>
+                <dt class="main-text "><span class="bold">Methods</span> - A method is basically a behavior. A class can
+                    contain many methods. It is in methods where the logics are written, data is manipulated and all the
+                    actions are executed. </dt>
+                <dt class="main-text "><span class="bold">Instance Variables </span>- Each object has its unique set of
+                    instance variables. An object's state is craeted by the values assigned to these instance variables.
+                </dt>
+                <dt class="main-text "><span class="bold">Case Sensitivity </span>- Java is case sensitive, which means
+                    identifier Hello and hello would have different meaning in Java.</dt>
+                <dt class="main-text "><span class="bold">Class Names</span>- For all class names the first letter
+                    should be in Upper Case. If several words are used to form a name of the class, each inner word's
+                    first letter should be in Upper Case.</dt>
+                <dt class="main-text "><span class="bold">Method Names </span>- All method names should start with a
+                    Lower Case letter. If several words are used to form the name of the method, then each inner word's
+                    first letter should be in Upper Case.</dt>
+                <dt class="main-text "><span class="bold" id="variables">Program File Name </span>- Name of the program
+                    file should exactly match the class name.
+                    When saving the file, you should save it using the class name (Remember Java is case sensitive) and
+                    append '.java' to the end of the name (if the file name and the class name do not match, your
+                    program will not compile).
+                    But please make a note that in case you do not have a public class present in the file then file
+                    name can be different than class name. It is also not mandatory to have a public class in the file.
+                </dt>
+                <dt class="main-text "><span class="bold">public static void main(String args[]) </span>- Java program
+                    processing starts from the main() method which is a mandatory part of every Java program.</dt>
+            </dl>
+            <br>
+            <hr>
+            <h3 class="h3-heading">
+                Java Variables, data types, type casting, ...
+            </h3>
+            <p class="bold">Syntax</p>
+            <p class="main-text">Following is the basic form of a variable declaration - </p>
+            <div class="imageCode"><img src="../image//javaImages/datatypeJava.png" alt=""></div>
+            <p class="main-text">Example of Valid Variables Declaration and Initializations</p>
+            <div class="imageCode"><img src="../image/javaImages/exampleDataType.png" alt=""></div>
+            <p class="bold">There are two types of type casting allowed in Java Programming:</p>
+            <li>Widening type casting</li>
+            <p class="main-text">Widening type casting is also known as implicit type casting in which a smaller type is
+                converted into a larger type, it is done by the compiler automatically.</p>
+            <div class="imageCode"><img src="../image//javaImages/javatypecasting.png" alt=""></div>
+            <li>Narrowing type casting</li>
+            <p class="main-text">Narrowing type casting is also known as explicit type casting or explicit type
+                conversion which is done by the programmer manually. In the narrowing type casting a larger type can be
+                converted into a smaller type.
+                When a programmer changes the variable type while writing the code. We can use the cast operator to
+                change the type of the variable. For example, double to int or int to double.</p>
+            <div class="imageCoding"><br><img src="../image/javaImages/manuallyTypeConversion.png" alt=""></div>
+            <br>
+            <p class="bold">Basic Operators</p>
+            <p class="bold"><br>
+                <li>Arithmetic Operators
+                    <p class="main-text">Summation(+), Subtraction(-), Multiplication(*), Division(/),
+                        PerfectDivision(//), Modulous(%)--> for Remainder, Increment(++), Decrement(--)</p>
+                </li>
+                <li>Assignment Operators
+                    <p class="main-text">Simple Assignment Operator(=), Add and assignment Operator(+=), Subtract and
+                        assignment Operator(-=), mulitply and assignment operator(*=), Modulus and assignment
+                        operator(%=), Leftshift and assignment Operator(<<=), Rightshift assignment operator(>>=) ,
+                            Bitwise exclusive OR and assignment operator(^=), Bitwise inclusive OR and assignment
+                            operator(|=) </p>
+                </li>
+                <li>Relational Operators
+                    <p class="main-text">Equal to (==), Not equal to (!=), Greater than( > ), Less than(<), Greater than
+                            or equal to (>=), Less than or equal to (<=) </p>
+                </li>
+                <li>Logical Operators
+                    <p class="main-text">Logical and(&&), Logical Or(||), logical not(!)</p>
+                </li>
+                <li>Bitwise Operators
+                    <p class="main-text" id="input">Bitwise operators are used to perform operations at the binary (bit)
+                        level. These operators work on individual bits of numbers. They are commonly used in low-level
+                        programming, encryption, and performance optimization.
+                        Java defines several bitwise operators, which can be applied to the integer types, long, int,
+                        short, char, and byte.
+                        Bitwise operator works on bits and performs bit-by-bit operation. Assume if a = 60 and b = 13;
+                        now in binary format they will be as follows −</p>
+                </li>
+                <li>Ternary Operators <p class="main-text">
+                        Conditional operator is also known as the ternary operator. This operator consists of three
+                        operands and is used to evaluate Boolean expressions. The goal of the operator is to decide,
+                        which value should be assigned to the variable. The operator is written as −
+                    </p>
+                    <div class="imageCode"><img src="../image/javaImages/ternary.png" alt=""></div>
+                </li>
+            </p>
+            <br>
+            <hr />
+            <h3 class="h3-heading">Java User Input, Comments</h3>
+            <p class="bold">User Input in Java</p>
+            <p class="main-text">To take input from the user in Java, the Scanner class is used. The Scanner class a
+                built-in class of java.util package.
+                Java Scanner class provides many built-in methods to take different types of user inputs from the users.
+            </p>
+            <div class="imageCode"><img src="../image/javaImages/input.png" alt=""></div>
+            <p class="bold" id="if">Three types of Comments </p><br>
+            <ol>
+                <li>Single-line comments(// Lorem, ipsum dolor. )</li>
+                <li>Multiline comments(/* Lorem, ipsum dolor. */)</li>
+                <li>Documentation comments(/** Lorem, ipsum dolor. **/)</li>
+            </ol>
+            </p>
+            <br>
+            <hr><br>
+            <h3 class="h3-heading">Decision Making</h3>
+            <p class="bold">if-else</p>
+            <p class="main-text">Following is the syntax of an if... else statement - </p>
+            <div class="imageCode"><img src="../image/javaImages/ifelse.png" alt=""></div>
+            <p class="bold" id="loop">Switch Statement</p>
+            <p class="main-text">The syntax of java switch statement is -</p>
+            <div class="imageCode"><img src="../image/javaImages/switch.png" alt=""></div>
+            <br>
+            <hr><br>
+            <h3 class="h3-heading">Loops, and loop statements</h3>
+            <li class="bold">For Loops</li>
+            <div class="imageCode"><img src="../image/javaImages/forLoop.png" alt=""></div>
+            <li class="bold">For Each Loop</li>
+            <div class="imageCode"><img src="../image/javaImages/forEach.png" alt=""></div>
+            <li class="bold">While Loop</li>
+            <div class="imageCode"><img src="../image/javaImages/while.png" alt=""></div>
+            <li class="bold">Do While Loop</li>
+            <div class="imageCode"><img src="../image/javaImages/doWhile.png" alt=""></div>
+            <li class="bold">Break</li>
+            <div class="imageCode"><img src="../image/javaImages/break.png" alt=""></div>
+            <li class="bold">Continue</li>
+            <div class="imageCode" id="string"><img src="../image/javaImages/javaContinue.png" alt=""></div><br>
+            <hr><br>
+            <h3 class="h3-heading">Java String Class </h3>
+            <p class="main-text">The Java platform provides the String class to create and manipulate strings.</p>
+            <div class="imageCode" id="class"><img src="../image/javaImages/string.png" alt=""></div><br>
+            <hr><br>
+            <h3 class="h3-heading">Class, objecs, methods</h3>
+            <p class="bold">Syntax to create a Java class</p>
+            <p class="main-text">Use the below syntax to create (declare) class in Java:</p>
+            <div class="imageCode"><img src="../image/javaImages/classSyntax.png" alt=""></div>
+            <p class="bold">Syntax to create a Java object</p>
+            <div class="imageCode"><img src="../image/javaImages/object.png" alt=""></div>
+            <p class="bold">Syntax to create a Java Method</p>
+            <div class="imageCode" id="constructor"><img src="../image/javaImages/method.png" alt=""></div><br>
+            <hr><br>
+            <h3 class="h3-heading">Constructors</h3>
+            <p class="main-text">Example of Constructor that will print hello world.</p>
+            <div class="imageCode" id="inheritance"><img src="../image/javaImages/constructor.png" alt=""></div><br>
+            <hr><br>
+            <h3 class="h3-heading">Inheritance</h3>
+            <p class="main-text">Syntax to implement inheritance</p>
+            <div class="imageCode"><img src="../image/javaImages/inheritance.png" alt=""></div><br><br><br>
+
+        </div>
+
+    </div>
+    <div class="footer"></div>
+    <script>
+        function toggleMenu() {
+            document.getElementById('labelMenu').classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>

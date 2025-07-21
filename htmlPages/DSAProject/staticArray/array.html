@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Static Array Visualizer</title>
+  <link rel="stylesheet" href="array.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Static Array Visualizer</h1>
+      <p class="subtitle">
+        Visualize and interact with a static array.<br>
+        <span class="ds-theory">Arrays are fixed-size, contiguous data structures that allow constant-time access by
+          index and efficient traversal. They are the foundation of many other data structures in computer
+          science.</span>
+      </p>
+    </header>
+
+    <section class="theory-section">
+      <h2>What is an Array?</h2>
+      <p>
+        An <strong>array</strong> is a linear, contiguous collection of elements of the same type, stored in adjacent
+        memory locations. Arrays are widely used in Data Structures and Algorithms (DSA) for their simplicity and
+        efficiency in accessing elements by index.
+      </p>
+      <ul>
+        <li><strong>Fixed Size:</strong> The size is defined at initialization and cannot change.</li>
+        <li><strong>Efficient Access:</strong> Retrieve or update any element using its index in <b>O(1)</b> time.</li>
+        <li><strong>Same Type:</strong> All elements must be of the same data type.</li>
+        <li><strong>Operations:</strong> Access, Update, Insert, Delete, Traverse, Search, Sort, Reverse, Merge, Clear.
+        </li>
+      </ul>
+      <h3>Big O Complexity Table</h3>
+      <div class="table-responsive">
+        <table class="bigo-table">
+          <thead>
+            <tr>
+              <th>Operation</th>
+              <th>Description</th>
+              <th>Time Complexity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Access</td>
+              <td>Get value at index <i>i</i></td>
+              <td>O(1)</td>
+            </tr>
+            <tr>
+              <td>Update</td>
+              <td>Set value at index <i>i</i></td>
+              <td>O(1)</td>
+            </tr>
+            <tr>
+              <td>Traverse</td>
+              <td>Visit all elements</td>
+              <td>O(n)</td>
+            </tr>
+            <tr>
+              <td>Search</td>
+              <td>Find value in array</td>
+              <td>O(n)</td>
+            </tr>
+            <tr>
+              <td>Insert</td>
+              <td>Insert at index (static: no shifting)</td>
+              <td>O(1)</td>
+            </tr>
+            <tr>
+              <td>Delete</td>
+              <td>Delete at index (static: no shifting)</td>
+              <td>O(1)</td>
+            </tr>
+            <tr>
+              <td>Sort</td>
+              <td>Sort non-empty elements</td>
+              <td>O(n log n)</td>
+            </tr>
+            <tr>
+              <td>Reverse</td>
+              <td>Reverse non-empty elements</td>
+              <td>O(n)</td>
+            </tr>
+            <tr>
+              <td>Merge</td>
+              <td>Merge another array into empty slots</td>
+              <td>O(n)</td>
+            </tr>
+            <tr>
+              <td>Clear</td>
+              <td>Set all elements to empty</td>
+              <td>O(n)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="controls-section">
+      <div class="row">
+        <div>
+          <label for="data-type"><b>Data Type:</b></label>
+          <select id="data-type">
+            <option value="number">Number</option>
+            <option value="string">String</option>
+          </select>
+        </div>
+        <div>
+          <label for="array-size"><b>Array Size:</b></label>
+          <input type="number" id="array-size" placeholder="Size" min="1">
+          <button onclick="initializeArray()">Initialize</button>
+        </div>
+      </div>
+      <div class="row op-row">
+        <div>
+          <label>Insert</label>
+          <input type="text" id="insert-value" placeholder="Value" disabled>
+          <input type="number" id="insert-index" placeholder="Index" disabled>
+          <button id="insert-btn" onclick="insert()" disabled>Insert</button>
+        </div>
+        <div>
+          <label>Delete</label>
+          <input type="number" id="delete-index" placeholder="Index" disabled>
+          <button id="delete-btn" onclick="deleteAt()" disabled>Delete</button>
+        </div>
+        <div>
+          <label>Access</label>
+          <input type="number" id="access-index" placeholder="Index" disabled>
+          <button id="access-btn" onclick="access()" disabled>Access</button>
+        </div>
+        <div>
+          <label>Update</label>
+          <input type="number" id="update-index" placeholder="Index" disabled>
+          <input type="text" id="update-value" placeholder="New Value" disabled>
+          <button id="update-btn" onclick="update()" disabled>Update</button>
+        </div>
+      </div>
+      <div class="row op-row">
+        <div>
+          <label>Traverse</label>
+          <button id="traverse-btn" onclick="traverse()" disabled>Traverse</button>
+        </div>
+        <div>
+          <label>Search</label>
+          <input type="text" id="search-value" placeholder="Value" disabled>
+          <button id="search-btn" onclick="search()" disabled>Search</button>
+        </div>
+        <div>
+          <label>Sort</label>
+          <button id="sort-btn" onclick="sortArray()" disabled>Sort</button>
+        </div>
+        <div>
+          <label>Reverse</label>
+          <button id="reverse-btn" onclick="reverseArray()" disabled>Reverse</button>
+        </div>
+        <div>
+          <label>Merge</label>
+          <input type="text" id="merge-array" placeholder="e.g. 1,2,3" disabled>
+          <button id="merge-btn" onclick="mergeArray()" disabled>Merge</button>
+        </div>
+        <div>
+          <label>Clear</label>
+          <button id="clear-btn" onclick="clearArray()" disabled>Clear</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="array-container" class="array-container"></div>
+    <div id="status" class="status"></div>
+  </div>
+  <footer>
+    <div class="footer-note">
+      <span>Made with ❤️ for Data Structures & Algorithms learning.</span>
+    </div>
+  </footer>
+  <script src="array.js"></script>
+</body>
+
+</html>

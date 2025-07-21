@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Cheetsheat</title>
+    <style>
+        @font-face {
+            font-family: 'Pacifico';
+            src: url('../fonts/Pacifico-Regular.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: "Andada";
+            src: url('../fonts/AndadaPro-Italic-VariableFont_wght.ttf')format('truetype');
+        }
+
+        @font-face {
+            font-family: "man";
+            src: url('../fonts/Manrope-VariableFont_wght.ttf')format('truetype');
+        }
+
+        * {
+            color: black;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Andada";
+
+        }
+
+        .top {
+            position: fixed;
+            height: 200px;
+            width: 100%;
+            z-index: 200;
+        }
+
+        .nav {
+            height: 80px;
+            background-color: dodgerblue;
+            font-size: 20px;
+            font-weight: 700;
+            border: 0.1px solid black;
+            border-top: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .right,
+        .left {
+            margin: 10px;
+            padding: 10px;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid white;
+            border: none;
+        }
+
+        .navbar li a:hover {
+            color: black;
+        }
+
+        .abdullah {
+            margin-top: 10px;
+            display: block;
+        }
+
+        .abd {
+            font-family: "Pacifico";
+            color: white;
+        }
+
+        .label {
+            background-color: lightgoldenrodyellow;
+            border-bottom: solid 5px dodgerblue;
+            display: flex;
+        }
+
+        .label .itemLabel {
+            padding: 8px;
+
+        }
+
+        .label .itemLabel:hover {
+            cursor: pointer;
+            background-color: rgb(232, 232, 187);
+        }
+
+        .hero {
+            display: flex;
+            font-size: 1.1rem;
+        }
+
+        .main-content {
+            width: 100%;
+            padding-left: 10px;
+            padding-right: 40px;
+            margin-left: 10px;
+            padding-top: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .image {
+            padding-bottom: 10px;
+        }
+
+        .h3-heading {
+            color: rgb(46, 42, 42);
+            margin: 10px 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .main-text {
+            font-family: 'man';
+            font-size: 1.1rem;
+        }
+
+        .imageCode {
+            padding-top: 10px;
+        }
+
+        .bold {
+            font-size: 1.3rem;
+            font-family: "Andada";
+            font-weight: 900;
+        }
+
+        .footer {
+            z-index: 300;
+            width: 100%;
+            margin-top: 50px;
+            height: 300px;
+            background-color: dodgerblue;
+
+        }
+
+        .right a {
+            text-decoration: none;
+            color: white;
+        }
+
+        body {
+            zoom: 90%;
+        }
+
+        .right {
+            display: flex;
+        }
+
+        .label a {
+            text-decoration: none;
+        }
+
+        .file-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .file-card {
+            background: white;
+            border-radius: 3px;
+            width: 150px;
+            padding: 5px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+        }
+
+        .file-card img {
+            margin-bottom: 14px;
+            width: 50%;
+            border-radius: 5px;
+        }
+
+        .file-card h3 {
+            margin: 10px 0 5px;
+        }
+
+        .file-card p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .btn-group {
+            background-color: white;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 15px;
+            font-size: 14px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-view {
+            background-color: dodgerblue;
+        }
+
+        .btn-view:hover {
+            box-shadow: 0px 0px 4px dodgerblue;
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+        }
+
+        .abd {
+            font-size: 1.9rem;
+        }
+
+        body {
+            zoom: 90%;
+        }
+
+        .headery {
+            background-color: dodgerblue;
+            color: white;
+            border-radius: 8px;
+            width: 50%;
+            padding: 10px;
+            margin: 20px 0px 20px 0px;
+        }
+
+        .hero-header {
+            display: flex;
+            width: 90%;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+        }
+
+        .card {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0px 10px lightgray;
+        }
+
+        .abd {
+            font-family: "Pacifico";
+            color: white;
+            font-size: 1.8rem;
+            /* or adjust as you see fit */
+        }
+
+        /* Hamburger styles */
+        .hamburger {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+            margin: 10px;
+            color: white;
+        }
+
+        @media (max-width: 900px) {
+            .label {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                width: 100%;
+                background: dodgerblue;
+                z-index: 1000;
+            }
+
+            .label a div {
+                color: white;
+            }
+
+
+            .label.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .main-content,
+            .file-container,
+            .hero-header {
+                padding-left: 2vw !important;
+                padding-right: 2vw !important;
+                margin-left: 0 !important;
+                width: 100% !important;
+                flex-direction: rows !important;
+                align-items: stretch !important;
+            }
+
+            .file-card {
+                width: 90vw;
+                height: auto;
+                min-width: 0;
+            }
+
+            .headery {
+                width: 95vw;
+                font-size: 1.1rem;
+                padding: 5px;
+            }
+
+            .footer,
+            .nav,
+            .top {
+                font-size: 1em;
+                flex-direction: column;
+                height: auto;
+            }
+
+            .right {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0;
+                padding: 5px;
+            }
+
+            .abd {
+                font-size: 1rem !important;
+            }
+
+            .file-card img {
+                width: 15%;
+            }
+        }
+
+        /* Make images and media responsive */
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="nav">
+            <div class="right">
+                <a href="../index.html">
+                    <img src="../image/mainPageImage/home_12074276.png"
+                        style="border: 1px solid white; border-radius: 50%; padding: 2px;" height="50" width="50"
+                        alt="">
+                </a>
+                <div style="width: 70px;"></div>
+                <img src="../image/mainPageImage/abdullahNooristani.png" width="40" height="50"
+                    style=" margin-left:10px;border-radius: 10px;" alt="">
+                <div style="width: 10px;"></div>
+                <h2 class="abd"> Abdullah Nooristani</h2>
+                <div style="width: 70px;"></div>
+                <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+            </div>
+
+        </div>
+
+        <div class="label" id="labelMenu">
+
+            <a href="./html.html">
+                <div class="itemLabel">HTML Cheetsheat
+                </div>
+            </a>
+            <a href="./css.html">
+                <div class="itemLabel">CSS Cheetsheat</div>
+            </a>
+            <a href="./js.html">
+                <div class="itemLabel">JavaScript Cheetsheat</div>
+            </a>
+            <a href="./presentation.html">
+                <div class="itemLabel">Presentations</div>
+            </a>
+            <a href="./cplusplus.html">
+                <div class="itemLabel">C++ Cheetsheat</div>
+            </a>
+            <a href="./java.html">
+                <div class="itemLabel">Java Cheetsheat</div>
+            </a>
+            <a href="./DSAProject/dsaProject.html">
+                <div class="itemLabel">DSA Project</div>
+            </a>
+            <a href="./paperHomeworks.html">
+                <div class="itemLabel">DSA Paper Homeworks</div>
+            </a>
+            <a href="./WebProject/html/index.html" target="_blank">
+                <div class="itemLabel">Web Project</div>
+            </a>
+            <a href="./paperHomeworks.html">
+                <div class="itemLabel">Web Paper Homeworks</div>
+            </a>
+        </div>
+    </div>
+    <div class="hero">
+        <div class="main-content">
+            <div class="hero-header">
+                <h2 class="headery">Handwritten Homeworks of Web Design and Development</h2>
+                <div style="width: 50px;"></div>
+                <img src="../image/paperHomeworkImages/school.png" alt="" height="100" width="100">
+            </div>
+
+            <div class="file-container">
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>Differences Between Library and Framework.</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeworksOfWEB/Differences between Library and Framework.pdf"
+                            class="btn btn-view" target="_blank">Open PDF</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>Differences Between Website and Web Application.</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeworksOfWEB/Difference between Website and Webapplication.pdf"
+                            class="btn btn-view" target="_blank">Open PDF</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>Differences Between Tag and element.</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeworksOfWEB/Diffrerence between tag and element.pdf" class="btn btn-view"
+                            target="_blank">Open PDF</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>Problems with the giving same ID</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeworksOfWEB/Problems with the repeated Id.pdf" class="btn btn-view"
+                            target="_blank">Open PDF</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>Document Object Model (DOM)</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeworksOfWEB/Document Object Model (DOM) .pdf" class="btn btn-view"
+                            target="_blank">Open PDF</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>Browser Object Model (BOM)</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeworksOfWEB/Browser Object Model (BOM).pdf" class="btn btn-view"
+                            target="_blank">Open PDF</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>Position in CSS</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeworksOfWEB/Position in CSS.pdf" class="btn btn-view" target="_blank">Open
+                            PDF</a>
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>Domain name and Top Level Domain name</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeworksOfWEB/Domain Name and TLD.pdf" class="btn btn-view"
+                            target="_blank">Open PDF</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>How Files Stores Download in history.(Segmentation)</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeworksOfWEB/how files store in download(segmentation).pdf"
+                            class="btn btn-view" target="_blank">Open PDF</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>Inheritance in CSS</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeworksOfWEB/Inheritance in CSS.pdf" class="btn btn-view"
+                            target="_blank">Open PDF</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>Unit Sizes in CSS</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeworksOfWEB/Unit Sizes in CSS.pdf" class="btn btn-view" target="_blank">Open
+                            PDF</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>writing www in web pages and meaning of .com </p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeworksOfWEB/Writing www in web pages and .com.pdf" class="btn btn-view"
+                            target="_blank">Open PDF</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>Pseudo Class and Pseudo Elements in CSS</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeworksOfWEB/Pseudo Class and Pseudo Elements in CSS].pdf in CSS.pdf"
+                            class="btn btn-view" target="_blank">Open PDF</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-header">
+                <h2 class="headery">Handwritten Homeworks of Data Structures and Algorithms</h2>
+                <div style="width: 50px;"></div>
+                <img src="../image/paperHomeworkImages/school.png" alt="" height="100" width="100">
+            </div>
+            <div class="file-container">
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>Why are hash tables an sets are linear and also non-linear</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeWorksOfDSA/Why are Hash tables and sets are linear and also non-linear data structures.pdf"
+                            class="btn btn-view" target="_blank">Open PDF</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>How many characters can be stored in python string data type</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeWorksOfDSA/How many characters can be stored in python string.pdf"
+                            class="btn btn-view" target="_blank">Open PDF</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>Types of Asymptotic Analysis</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeWorksOfDSA/Types of Asymptotic analysis.pdf" class="btn btn-view"
+                            target="_blank">Open PDF</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>Types of Big O Notation</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeWorksOfDSA/Types of big O.pdf" class="btn btn-view" target="_blank">Open
+                            PDF</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>Types of Graph Algorithms</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeWorksOfDSA/Types of Graph Algorithms.pdf" class="btn btn-view"
+                            target="_blank">Open PDF</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="file-card">
+                        <img src="../image/paperHomeworkImages/child.png" alt="PDF Thumbnail">
+                        <p>Algorithm Paradigms</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="../paperHomeWorksOfDSA/Algorithm Paradigms.pdf" class="btn btn-view"
+                            target="_blank">Open PDF</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="footer">
+
+
+    </div>
+    <script>
+        function toggleMenu() {
+            document.getElementById('labelMenu').classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>

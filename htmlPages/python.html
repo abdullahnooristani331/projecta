@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Cheetsheat</title>
+    <style>
+    @font-face{
+            font-family: 'Pacifico';
+            src: url('../fonts/Pacifico-Regular.ttf') format('truetype');
+        }
+    @font-face{
+            font-family: "Andada";
+            src: url('../fonts/AndadaPro-Italic-VariableFont_wght.ttf')format('truetype');
+        }
+    @font-face{
+            font-family: "man";
+            src: url('../fonts/Manrope-VariableFont_wght.ttf')format('truetype');
+        }
+    *{
+        color: black;
+        margin:0;
+        box-sizing: border-box;
+        font-family:"Andada";
+        text-align:justify;
+    }
+    .top{
+        position: fixed;
+        height:200px;
+        width: 100%;
+        z-index: 200;
+    }
+    .nav{
+        height: 80px;
+        background-color: dodgerblue;
+        font-size:20px;
+        font-weight: 700;
+        border:0.1px solid black;
+        border-top: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .right, .left{
+        margin:10px;
+        padding:10px;
+        color: white;
+    }
+    .navbar{
+        display: flex;
+        list-style-type: none;
+    }
+    .navbar li a{
+        color: white;
+        text-decoration: none;
+        padding:10px;
+        border: 1px solid white;
+        border:none;
+    }
+    .navbar li a:hover{
+        color:black;
+    }
+    .abdullah{
+        margin-top:10px;
+        display: block;
+    }
+    .abd{
+        font-family: "Pacifico";
+        color: white;
+    }
+    .label{
+        background-color: lightgoldenrodyellow;
+        border-bottom: solid 5px dodgerblue;
+        display: flex;
+    }
+    .label .itemLabel{
+        padding:8px;
+
+    }
+    .label .itemLabel:hover{
+        cursor: pointer;
+        background-color:rgb(232, 232, 187) ;
+    }
+    .hero{
+        display: flex;
+        font-size: 1.1rem;
+    }
+    .leftHero ul li{
+        list-style-type: none;
+        padding:5px;
+        border: 0.5px solid black;
+    }
+    .leftHero ul li:first-child{
+        border-radius:4px 4px 0px 0px;
+    }
+    .leftHero ul li:last-child{
+        border-radius: 0px 0px 4px 4px;
+    }
+    .leftHero ul li:hover{
+        cursor: pointer;
+        background-color: lightgoldenrodyellow;
+    }
+    .sidebar {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        left: 0;
+        width: 25%;
+        height: 120vh;
+        background-color: lightgoldenrodyellow;
+    }
+    .sidebar ul{
+        list-style-type: none;
+        box-shadow: 0px 0px 10px black;
+        margin:0;
+        padding:0;
+    }
+    .sidebar ul li:hover{
+        background-color: rgb(232, 232, 187);
+    }
+    .sidebar ul li{
+        margin:7px;
+        padding: 7px;
+    }
+    .sidebar ul a  {
+        text-decoration: none;
+        color: black;
+    }
+
+    .main-content {
+        width: 75%;
+        padding-left:10px;
+        padding-right: 40px;
+        margin-left: 30%;
+        padding-top: 140px;
+    }
+    .header{
+        display: flex;
+        justify-content:center ;
+        align-items: center;
+        margin-bottom:10px;
+    }
+    .image{
+        padding-bottom: 10px;
+    }
+    .h3-heading{
+        color: rgb(46, 42, 42);
+        margin:10px 0 10px 0;
+        font-size: 1.5rem;
+    }
+    .main-text{
+        font-family: 'man';
+        font-size: 1.1rem;
+    }
+    .imageCode{
+        padding-top: 10px;
+    }
+    .bold{
+        font-size: 1.3rem;
+        font-family: "Andada";
+        font-weight: 900;
+    }
+    .footer{
+        z-index: 300;
+        width:100%;
+        margin-top:50px ;
+        height:300px;
+        background-color: dodgerblue;
+    }
+    .right a{
+        text-decoration: none;
+        color: white;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="top">
+
+        <div class="nav">
+            <div class="right"> <a href="../index.html"><h2 class="abd">ABDULLAH NOORISTANI</h2></a> 
+            </div>
+            <div class="left">
+                <ul class="navbar">
+                    <li style="border: 1px solid white; font-size: 2rem;"><a href="../index.html">HOME PAGE</a></li>
+                    <div style="width: 100px;"></div>
+                    <li><a href="">H.W of WEB</a></li>
+                    <li><a href="">H.W of DSA</a></li>
+                    <li><a href="">Project of WEB</li>
+                    <li><a href="">Project of DSA</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="label">
+            <div class="itemLabel">HTML</div>
+            <div class="itemLabel">CSS</div>
+            <div class="itemLabel">JAVASCRIPT</div>
+            <div class="itemLabel">PYTHON</div>
+            <div class="itemLabel">C++</div>
+            <div class="itemLabel">JAVA</div>
+            <div class="itemLabel">DSA PROJECT</div>
+            <div class="itemLabel">DSA HOMEWORKS</div>
+            <div class="itemLabel">DSA PAPER HOMEWORKS</div>
+            <div class="itemLabel">WEB PROJECT</div>
+            <div class="itemLabel">WEB HOMEWORKS</div>
+            <div class="itemLabel">WEB PAPER HOMEWORKS</div>
+            <div class="itemLabel">BIG-0 NOTATION</div>
+        </div>
+    </div>
+    <div class="hero">
+        <div class="leftHero sidebar">
+            <ul>
+                <a href="#top"><li>Java Overview and History</li></a>
+                <a href="#hello"><li>Java Hello World Program</li></a>
+                <a href="#basic"><li>Java very basic syntax</li></a>
+                <a href="#variables"><li>Java variables, data types, type casting, ...</li></a>
+                <a href="#input"><li>Java User Input, Java Comments</li></a>
+                <a href="#if"><li>Java Decision Making (if, else, switch)</li></a>
+                <a href="#loop"><li>Java Loops, and Loops statements</li></a>
+                <a href="#string"><li>Java Strings</li></a>
+                <a href="#class"><li>Java Classes, Objects, and Methods</li></a>
+                <a href="#constructor"><li>Java Constructors</li></a>
+                <a href="#inheritance"><li>Java Inheritance</li></a>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <h1>Python Cheetsheat and Basics Syntax</h1>
+                <div style="width: 50px;"></div>
+                <div >
+                    <img src="../image/mainPageImage/python.png" height="80" width="80" alt="java Image">
+                </div>
+                <br>
+            </div>
+            <hr>
+            <h3 class="h3-heading" id="overview">Python Overview </h3>
+            <p class="main-text">Python is a high-level, interpreted, interactive and object-oriented scripting language. Python is designed to be highly readable. It uses English keywords frequently where as other languages use punctuation, and it has fewer syntactical constructions than other languages.</p>
+            <hr>
+            <h3 class="h3-heading">History of Python</h3>
+            <p class="main-text"id="hello">
+Python was developed by Guido van Rossum (a Dutch programmer) in the late 1980s and early nineties at the National Research Institute for Mathematics and Computer Science in the Netherlands.
+Python is derived from many other languages, including ABC, Modula-3, C, C++, Algol-68, SmallTalk, and Unix shell and other scripting languages. Guido van Rossum wanted Python to be a high-level language that was powerful yet readable and easy to use.
+Python is copyrighted. Like Perl, Python source code is now available under the GNU General Public License (GPL).
+For many uninitiated people, the word Python is related to a species of snake. Rossum though attributes the choice of the name Python to a popular comedy series Monty Python's Flying Circus on BBC.
+Being the principal architect of Python, the developer community conferred upon him the title of Benevolent Dictator for Life (BDFL). However, in 2018, Rossum relinquished the title. Thereafter, the development and distribution of the reference implementation of Python is handled by a nonprofit organization Python Software Foundation.
+            </p><br>
+            <hr>
+            <h3 class="h3-heading" >
+                Python Hello World Program
+            </h3>
+            <p class="main-text">Printing "Hello World" on the output screen (console) is the first program in Python and other programming languages. </p>
+            <div class="imageCode" id="basic">
+                <img src="../image/pythonImages/helloWorld.png" alt="">
+            </div><br>
+            <hr>
+            <h3 class="h3-heading">
+                Java Basic Syntax
+            </h3>
+            <dl>
+                <dt class="main-text"><span class="bold">Object</span>s - Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behavior such as wagging their tail, barking, eating. An object is an instance of a class. </dt>
+                <dt class="main-text "><span class="bold">Class</span> - A class can be defined as a template/blueprint that describes the behavior/state that the object of its type supports.</dt>
+                <dt class="main-text "><span class="bold">Methods</span> - A method is basically a behavior. A class can contain many methods. It is in methods where the logics are written, data is manipulated and all the actions are executed. </dt>
+                <dt class="main-text "><span class="bold">Instance Variables  </span>- Each object has its unique set of instance variables. An object's state is craeted by the values assigned to these instance variables.</dt>
+                <dt class="main-text "><span class="bold">Case Sensitivity  </span>- Java is case sensitive, which means identifier Hello and hello would have different meaning in Java.</dt>
+                <dt class="main-text "><span class="bold">Class Names</span>- For all class names the first letter should be in Upper Case. If several words are used to form a name of the class, each inner word's first letter should be in Upper Case.</dt>
+                <dt class="main-text "><span class="bold">Method Names  </span>- All method names should start with a Lower Case letter. If several words are used to form the name of the method, then each inner word's first letter should be in Upper Case.</dt>
+                <dt class="main-text "><span class="bold" id="variables">Program File Name  </span>- Name of the program file should exactly match the class name.
+                When saving the file, you should save it using the class name (Remember Java is case sensitive) and append '.java' to the end of the name (if the file name and the class name do not match, your program will not compile).
+                But please make a note that in case you do not have a public class present in the file then file name can be different than class name. It is also not mandatory to have a public class in the file.</dt>
+                <dt class="main-text "><span class="bold">public static void main(String args[])  </span>- Java program processing starts from the main() method which is a mandatory part of every Java program.</dt>
+            </dl>
+            <br>
+            <hr>
+            <h3 class="h3-heading">
+                Java Variables, data types, type casting, ...
+            </h3>
+            <p class="bold">Syntax</p>
+            <p class="main-text">Following is the basic form of a variable declaration - </p>
+            <div class="imageCode"><img src="../image//javaImages/datatypeJava.png" alt=""></div>
+            <p class="main-text">Example of Valid Variables Declaration and Initializations</p>
+            <div class="imageCode"><img src="../image/javaImages/exampleDataType.png" alt=""></div>
+            <p class="bold">There are two types of type casting allowed in Java Programming:</p>
+            <li>Widening type casting</li>
+            <p class="main-text">Widening type casting is also known as implicit type casting in which a smaller type is converted into a larger type, it is done by the compiler automatically.</p>
+            <div class="imageCode"><img src="../image//javaImages/javatypecasting.png" alt=""></div>
+            <li>Narrowing type casting</li>
+            <p class="main-text">Narrowing type casting is also known as explicit type casting or explicit type conversion which is done by the programmer manually. In the narrowing type casting a larger type can be converted into a smaller type.
+                When a programmer changes the variable type while writing the code. We can use the cast operator to change the type of the variable. For example, double to int or int to double.</p>
+            <div class="imageCoding"><br><img src="../image/javaImages/manuallyTypeConversion.png" alt=""></div>
+            <br>  <p class="bold">Basic Operators</p>
+            <p class="bold"><br>
+                <li>Arithmetic Operators
+                    <p class="main-text">Summation(+), Subtraction(-), Multiplication(*), Division(/), PerfectDivision(//), Modulous(%)--> for Remainder, Increment(++), Decrement(--)</p>
+                </li>
+                <li>Assignment Operators
+                    <p class="main-text">Simple Assignment Operator(=), Add and assignment Operator(+=), Subtract and assignment Operator(-=), mulitply and assignment operator(*=), Modulus and assignment operator(%=), Leftshift and assignment Operator(<<=), Rightshift assignment operator(>>=) , Bitwise exclusive OR and assignment operator(^=), Bitwise inclusive OR and assignment operator(|=) </p>
+                </li>
+                <li>Relational Operators
+                    <p class="main-text">Equal to (==), Not equal to (!=), Greater than( > ), Less than(<), Greater than or equal to (>=), Less than or equal to (<=) </p>
+                </li>
+                <li>Logical Operators
+                    <p class="main-text">Logical and(&&), Logical Or(||), logical not(!)</p>
+                </li>
+                <li>Bitwise Operators
+                    <p class="main-text" id="input">Bitwise operators are used to perform operations at the binary (bit) level. These operators work on individual bits of numbers. They are commonly used in low-level programming, encryption, and performance optimization.
+                        Java defines several bitwise operators, which can be applied to the integer types, long, int, short, char, and byte.
+                        Bitwise operator works on bits and performs bit-by-bit operation. Assume if a = 60 and b = 13; now in binary format they will be as follows −</p>
+                </li>
+                <li>Ternary Operators <p class="main-text">
+                    Conditional operator is also known as the ternary operator. This operator consists of three operands and is used to evaluate Boolean expressions. The goal of the operator is to decide, which value should be assigned to the variable. The operator is written as −
+                </p>
+                <div class="imageCode"><img src="../image/javaImages/ternary.png" alt=""></div>
+            </li>
+            </p>
+            <br><hr/>
+            <h3 class="h3-heading">Java User Input, Comments</h3>
+            <p class="bold">User Input in Java</p>
+            <p class="main-text">To take input from the user in Java, the Scanner class is used. The Scanner class a built-in class of java.util package.
+                Java Scanner class provides many built-in methods to take different types of user inputs from the users.</p>
+            <div class="imageCode"><img src="../image/javaImages/input.png" alt=""></div>
+            <p class="bold" id="if">Three types of Comments </p><br> <ol><li>Single-line comments(// Lorem, ipsum dolor. )</li>
+            <li>Multiline comments(/* Lorem, ipsum dolor. */)</li>
+            <li>Documentation comments(/** Lorem, ipsum dolor. **/)</li></ol></p>
+            <br><hr><br>
+            <h3 class="h3-heading">Decision Making</h3>
+            <p class="bold">if-else</p>
+            <p class="main-text">Following is the syntax of an if... else statement - </p>
+            <div class="imageCode"><img src="../image/javaImages/ifelse.png" alt=""></div>
+            <p class="bold" id="loop">Switch Statement</p>
+            <p class="main-text">The syntax of java switch statement is -</p>
+            <div class="imageCode"><img src="../image/javaImages/switch.png" alt=""></div>
+            <br><hr><br>
+            <h3 class="h3-heading">Loops, and loop statements</h3>
+            <li class="bold">For Loops</li>
+            <div class="imageCode"><img src="../image/javaImages/forLoop.png" alt=""></div>
+            <li class="bold">For Each Loop</li>
+            <div class="imageCode"><img src="../image/javaImages/forEach.png" alt=""></div>
+            <li class="bold">While Loop</li>
+            <div class="imageCode"><img src="../image/javaImages/while.png" alt=""></div>
+            <li class="bold">Do While Loop</li>
+            <div class="imageCode"><img src="../image/javaImages/doWhile.png" alt=""></div>
+            <li class="bold" >Break</li>
+            <div class="imageCode" ><img src="../image/javaImages/break.png" alt=""></div>
+            <li class="bold">Continue</li>
+            <div class="imageCode"id="string"><img src="../image/javaImages/javaContinue.png" alt=""></div><br><hr><br>
+            <h3 class="h3-heading">Java String Class </h3>
+            <p class="main-text">The Java platform provides the String class to create and manipulate strings.</p>
+            <div class="imageCode" id="class"><img src="../image/javaImages/string.png" alt=""></div><br><hr><br>
+            <h3 class="h3-heading">Class, objecs, methods</h3>
+            <p class="bold">Syntax to create a Java class</p>
+            <p class="main-text">Use the below syntax to create (declare) class in Java:</p>
+            <div class="imageCode"><img src="../image/javaImages/classSyntax.png" alt=""></div>
+            <p class="bold">Syntax to create a Java object</p>
+            <div class="imageCode"><img src="../image/javaImages/object.png" alt=""></div>
+            <p class="bold">Syntax to create a Java Method</p>
+            <div class="imageCode" id="constructor"><img src="../image/javaImages/method.png" alt=""></div><br><hr><br>
+            <h3 class="h3-heading">Constructors</h3>
+            <p class="main-text">Example of Constructor that will print hello world.</p>
+            <div class="imageCode" id="inheritance"><img src="../image/javaImages/constructor.png" alt=""></div><br><hr><br>
+            <h3 class="h3-heading">Inheritance</h3>
+            <p class="main-text">Syntax to implement inheritance</p>
+            <div class="imageCode"><img src="../image/javaImages/inheritance.png" alt=""></div><br><br><br>
+            
+        </div>
+
+    </div>
+    <div class="footer"></div>
+</body>
+</html>

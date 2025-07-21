@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Cheetsheat</title>
+    <style>
+        @font-face {
+            font-family: 'Pacifico';
+            src: url('../../fonts/Pacifico-Regular.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: "Andada";
+            src: url('../../fonts/AndadaPro-Italic-VariableFont_wght.ttf')format('truetype');
+        }
+
+        @font-face {
+            font-family: "man";
+            src: url('../fonts/Manrope-VariableFont_wght.ttf')format('truetype');
+        }
+
+        * {
+            color: black;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Andada";
+
+        }
+
+        .top {
+            position: fixed;
+            height: 200px;
+            width: 100%;
+            z-index: 200;
+        }
+
+        .nav {
+            height: 80px;
+            background-color: dodgerblue;
+            font-size: 20px;
+            font-weight: 700;
+            border: 0.1px solid black;
+            border-top: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .right,
+        .left {
+            margin: 10px;
+            padding: 10px;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid white;
+            border: none;
+        }
+
+        .navbar li a:hover {
+            color: black;
+        }
+
+        .abdullah {
+            margin-top: 10px;
+            display: block;
+        }
+
+        .abd {
+            font-family: "Pacifico";
+            color: white;
+        }
+
+        .label {
+            background-color: lightgoldenrodyellow;
+            border-bottom: solid 5px dodgerblue;
+            display: flex;
+        }
+
+        .label .itemLabel {
+            padding: 8px;
+
+        }
+
+        .label .itemLabel:hover {
+            cursor: pointer;
+            background-color: rgb(232, 232, 187);
+        }
+
+        .hero {
+            display: flex;
+            font-size: 1.1rem;
+        }
+
+        .main-content {
+            width: 100%;
+            padding-left: 10px;
+            padding-right: 40px;
+            margin-left: 10px;
+            padding-top: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .image {
+            padding-bottom: 10px;
+        }
+
+        .h3-heading {
+            color: rgb(46, 42, 42);
+            margin: 10px 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .main-text {
+            font-family: 'Andada';
+            font-size: 1.1rem;
+        }
+
+        .imageCode {
+            padding-top: 10px;
+        }
+
+        .bold {
+            font-size: 1.3rem;
+            font-family: "Andada";
+            font-weight: 900;
+        }
+
+        .footer {
+            z-index: 300;
+            width: 100%;
+            margin-top: 50px;
+            height: 300px;
+            background-color: dodgerblue;
+
+        }
+
+        .right a {
+            text-decoration: none;
+            color: white;
+        }
+
+        body {
+            zoom: 90%;
+        }
+
+        .right {
+            display: flex;
+        }
+
+        .label a {
+            text-decoration: none;
+        }
+
+        .file-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .file-card {
+            background: white;
+            border-radius: 3px;
+            width: 150px;
+            padding: 5px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+        }
+
+        .file-card img {
+            margin-bottom: 14px;
+            width: 50%;
+            border-radius: 5px;
+        }
+
+        .file-card h3 {
+            margin: 10px 0 5px;
+        }
+
+        .file-card p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .btn-group {
+            background-color: white;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 15px;
+            font-size: 14px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-view {
+            background-color: dodgerblue;
+        }
+
+        .btn-view:hover {
+            box-shadow: 0px 0px 4px dodgerblue;
+        }
+
+        .right {
+            display: flex;
+        }
+
+        body {
+            zoom: 90%;
+        }
+
+        .headery {
+            background-color: dodgerblue;
+            color: white;
+            border-radius: 8px;
+            width: 50%;
+            padding: 10px;
+            margin: 20px 0px 20px 0px;
+        }
+
+        .hero-header {
+            display: flex;
+            width: 90%;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+        }
+
+        .card {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0px 10px lightgray;
+
+        }
+
+        .file-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            margin-bottom: 36px;
+        }
+
+        .dashboard-link {
+            text-decoration: none;
+            color: inherit;
+            display: inline-block;
+        }
+
+        .dashboard-card {
+            background: #fff;
+            box-shadow: 0 0px 3px dodgerblue;
+            border-radius: 12px;
+            padding: 20px 18px 14px 18px;
+            text-align: center;
+            width: 160px;
+            height: 210px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 200px;
+            transition: box-shadow 0.18s, transform 0.18s;
+        }
+
+        * {
+            font-family: "Andada";
+        }
+
+        .dashboard-link:hover .dashboard-card {
+            box-shadow: 0 0px 10px dodgerblue;
+            transform: translateY(-4px) scale(1.03);
+            cursor: pointer;
+        }
+
+        .dashboard-card img {
+            margin-bottom: 14px;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .dashboard-card h2 {
+            font-size: 1.15em;
+            color: #1d3557;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 700px) {
+            .file-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .dashboard-card {
+                width: 90vw;
+                height: 170px;
+            }
+        }
+
+        .dashboard-card p {
+            font-family: "Andada";
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="nav">
+            <div class="right">
+                <a href="../../index.html">
+                    <img src="../../image/mainPageImage/home_12074276.png"
+                        style="border: 1px solid white; border-radius: 50%; padding: 2px;" height="50" width="50"
+                        alt="">
+                </a>
+                <div style="width: 100px;"></div>
+                <img src="../../image/mainPageImage/abdullahNooristani.png" width="40" height="50"
+                    style=" margin-left:10px;border-radius: 10px;" alt="">
+                <div style="width: 10px;"></div>
+                <h2 class="abd"> Abdullah Nooristani</h2>
+            </div>
+            <div class="left">
+                <ul class="navbar">
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Project of WEB</li>
+                    <li><a href="">Project of DSA</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="label">
+            <a href="../html.html">
+                <div class="itemLabel">HTML</div>
+            </a>
+            <a href="../css.html">
+                <div class="itemLabel">CSS</div>
+            </a>
+            <a href="../js.html">
+                <div class="itemLabel">JAVASCRIPT</div>
+            </a>
+            <a href="../presentation.html">
+                <div class="itemLabel">PRESENTATIONS</div>
+            </a>
+            <a href="../cplusplus.html">
+                <div class="itemLabel">C++</div>
+            </a>
+            <a href="../java.html">
+                <div class="itemLabel">JAVA</div>
+            </a>
+
+            <a href="./dsaProject.html">
+                <div class="itemLabel">DSA PROJECT</div>
+            </a>
+            <a href="../paperHomeworks.html">
+                <div class="itemLabel">DSA PAPAER HOMEWORKS</div>
+            </a>
+
+            <a href="../WebProject/html/index.html" target="_blank">
+                <div class="itemLabel">WEB PROJECT</div>
+            </a>
+            <a href="../paperHomeworks.html">
+                <div class="itemLabel">WEB PAPAER HOMEWORKS</div>
+            </a>
+
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="file-container">
+            <a href="./staticArray/array.html" class="dashboard-link">
+                <div class="dashboard-card">
+                    <img src="../../image/dsaVisualizorImages/array.png" alt="Item 1">
+                    <p>Static Array</p>
+                </div>
+            </a>
+            <a href="./stackLinkedList/stackLinkedList.html" class="dashboard-link">
+                <div class="dashboard-card">
+                    <img src="../../image/dsaVisualizorImages/stackusingLinkedList.png" alt="Item 1">
+                    <p>Stack Using Linked List</p>
+                </div>
+            </a>
+            <a href="./stack/stack.html" class="dashboard-link">
+                <div class="dashboard-card">
+                    <img src="../../image/dsaVisualizorImages/stackusingArray.png" alt="Item 1">
+                    <p>Stack Using Array</p>
+                </div>
+            </a>
+            <a href="./queue/queue.html" class="dashboard-link">
+                <div class="dashboard-card">
+                    <img src="../../image/dsaVisualizorImages/queueusingarray.png" alt="Item 1">
+                    <p>Queue Using Array</p>
+                </div>
+            </a>
+            <a href="./queueLinkedList/queueLinkedList.html" class="dashboard-link">
+                <div class="dashboard-card">
+                    <img src="../../image/dsaVisualizorImages/queueusingLinkedList.png" alt="Item 1">
+                    <p>Queue Using Linked List</p>
+                </div>
+            </a>
+            <a href="./singly-linked-list/singlyLinkedList.html" class="dashboard-link">
+                <div class="dashboard-card">
+                    <img src="../../image/dsaVisualizorImages/singlyLinkedList.png" alt="Item 1">
+                    <p>Singly Linked List</p>
+                </div>
+            </a>
+            <a href="./doublylinkedlist/doublyLinkedList.html" class="dashboard-link">
+                <div class="dashboard-card">
+                    <img src="../../image/dsaVisualizorImages/doubly Linked List.png" alt="Item 1">
+                    <p>Doubly Linked List</p>
+                </div>
+            </a>
+            <a href="./bst/bst.html" class="dashboard-link">
+                <div class="dashboard-card">
+                    <img src="../../image/dsaVisualizorImages/bst.png" alt="Item 1">
+                    <p>Binary Search Tree</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+
+    <div class="footer">
+
+
+    </div>
+</body>
+
+</html>

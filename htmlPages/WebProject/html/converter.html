@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+        <div class="logo">
+      <h5 style=" font-size: 1.7rem;">Currency Converter</h5>
+      <div style="width: 100px;"></div>
+      <img src="../../../image/mainPageImage/abdullahNooristani.png" width="40" height="50" style=" margin-left:10px;border-radius: 10px;" alt="">
+      <div style="width: 10px;"></div>
+      <h2 style="font-size: 1.5rem;"> Abdullah Nooristani</h2>
+  </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="converter.html" class="active">Converter</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" >Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="converter-container">
+    <section class="converter-box">
+      <form id="converter-form">
+        <input type="number" id="amount" placeholder="Amount" required />
+        <select id="from-currency"></select>
+        <select id="to-currency"></select>
+        <button type="submit">Convert</button>
+        <button id="swap-btn">🔁 Swap</button>
+      </form>
+
+      <div class="result-box">
+        <h2>Converted Amount:</h2>
+        <p id="result">--</p>
+      </div>
+    </section>
+
+    <section class="chart-section">
+      <h2>Exchange Rate Trend</h2>
+      <canvas id="rateChart"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Currency Converter</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/converter.js"></script>
+</body>
+</html>

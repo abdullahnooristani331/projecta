@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Tags Reference Table</title>
+    <style>
+        @font-face {
+            font-family: "man";
+            src: url('../fonts/Manrope-VariableFont_wght.ttf')format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Pacifico';
+            src: url('../fonts/Pacifico-Regular.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: "Andada";
+            src: url('../fonts/AndadaPro-Italic-VariableFont_wght.ttf');
+        }
+
+        * {
+            color: black;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .top {
+            width: 100%;
+            font-family: "Andada";
+            position: fixed;
+            top: 0;
+        }
+
+        .nav {
+            font-family: "Andada";
+            height: 80px;
+            background-color: dodgerblue;
+            font-size: 20px;
+            font-weight: 700;
+            border: 0.1px solid black;
+            border-top: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .right,
+        .left {
+            margin: 10px;
+            padding: 10px;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid white;
+            border: none;
+        }
+
+        .navbar li a:hover {
+            color: black;
+        }
+
+        .abdullah {
+            margin-top: 10px;
+            display: block;
+        }
+
+        .heading {
+            font-family: "Andada", sans-serif !important;
+            text-align: center;
+            font-size: 2rem;
+            margin: 10px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            height: 300px;
+            background-color: dodgerblue;
+        }
+
+        .row1,
+        .row2 {
+            display: flex;
+        }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        @media (max-width: 900px) {
+
+            table,
+            th,
+            td {
+                font-size: 0.95em;
+                padding: 7px 5px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            table,
+            th,
+            td {
+                font-size: 0.85em;
+                padding: 4px 2px;
+            }
+        }
+
+        .left {
+            display: none !important;
+        }
+
+        .center2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .item {
+            text-align: center;
+            box-shadow: 2px 1px 4px black;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 4px;
+            font-weight: 900;
+            height: 145px;
+            width: 133px;
+        }
+
+        .item:hover {
+            cursor: pointer;
+            opacity: 0.65;
+        }
+
+        .item img {
+            margin-bottom: 10px;
+            height: 80px;
+            width: 80px;
+        }
+
+        .center {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 100px;
+        }
+
+        .center1 {
+            margin-right: 100px;
+            margin-top: 100px;
+            width: 35%;
+            font-size: 1.4rem;
+        }
+
+        .center1 ul li {
+            list-style-type: none;
+            padding: 5px;
+            border: 0.5px solid black;
+        }
+
+        .center1 ul li:first-child {
+            border-radius: 4px 4px 0px 0px;
+        }
+
+        .center1 ul li:last-child {
+            border-radius: 0px 0px 4px 4px;
+        }
+
+        .center1 ul li:hover {
+            cursor: pointer;
+            background-color: lightgoldenrodyellow;
+        }
+
+        .abd {
+            font-family: "Pacifico";
+            color: white;
+        }
+
+        .label {
+            background-color: lightgoldenrodyellow;
+            border-bottom: solid 5px dodgerblue;
+            display: flex;
+        }
+
+        .label .itemLabel {
+            padding: 8px;
+
+        }
+
+        .label .itemLabel:hover {
+            cursor: pointer;
+            background-color: rgb(232, 232, 187);
+        }
+
+        .label .itemLabel a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .row2 a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .center1 ul a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .image {
+            padding-bottom: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        table {
+            font-family: "man", Arial, Helvetica, sans-serif;
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            font-family: "Andada", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            margin-top: 10%;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: dodgerblue;
+            color: lightgoldenrodyellow;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .label a {
+            text-decoration: none;
+        }
+
+        .right a {
+            text-decoration: none;
+        }
+
+        table {
+            margin: 0 10px 20px 10px;
+        }
+
+        body {
+            zoom: 90%;
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .home-icon,
+        .abdullah-img {
+            border-radius: 10px;
+            border: 1px solid white;
+            padding: 2px;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        @media (max-width: 900px) {
+            .label {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                width: 100%;
+                background: dodgerblue;
+                z-index: 1000;
+            }
+
+            .label.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top">
+        <div class="nav">
+
+            <div class="right">
+                <a href="../index.html">
+                    <img src="../image/mainPageImage/home_12074276.png" class="home-icon" height="50" width="50" alt="">
+                </a>
+                <img src="../image/mainPageImage/abdullahNooristani.png" class="abdullah-img" width="40" height="50"
+                    alt="">
+                <h2 class="abd">Abdullah Nooristani</h2>
+            </div>
+            <div class="left">
+                <ul class="navbar">
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Project of WEB</li>
+                    <li><a href="">Project of DSA</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        <div class="label" id="labelMenu">
+            <a href="./html.html">
+                <div class="itemLabel">HTML</div>
+            </a>
+            <a href="./css.html">
+                <div class="itemLabel">CSS</div>
+            </a>
+            <a href="./js.html">
+                <div class="itemLabel">JAVASCRIPT</div>
+            </a>
+            <a href="./presentation.html">
+                <div class="itemLabel">PRESENTATIONS</div>
+            </a>
+            <a href="./cplusplus.html">
+                <div class="itemLabel">C++</div>
+            </a>
+            <a href="./java.html">
+                <div class="itemLabel">JAVA</div>
+            </a>
+            <a href="./DSAProject/dsaProject.html">
+                <div class="itemLabel">DSA PROJECT</div>
+            </a>
+            <a href="./paperHomeworks.html">
+                <div class="itemLabel">DSA PAPAER HOMEWORKS</div>
+            </a>
+
+            <a href="./WebProject/html/index.html" target="_blank">
+                <div class="itemLabel">WEB PROJECT</div>
+            </a>
+            <a href="./paperHomeworks.html">
+                <div class="itemLabel">WEB PAPAER HOMEWORKS</div>
+            </a>
+        </div>
+    </div>
+    <div class="header">
+        <h1>HTML5 Cheetsheat all html tags</h1>
+        <div style="width: 50px;"></div>
+        <div class="image">
+            <img src="../image/mainPageImage/html.png" height="80" width="80" alt="html Image">
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Tag</th>
+                <th>Attributes</th>
+                <th>Description</th>
+                <th>Example</th>
+                <th>Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><code>&lt;a&gt;</code></td>
+                <td>href, target, rel, title</td>
+                <td>Defines a hyperlink.</td>
+                <td><code>&lt;a href="https://example.com"&gt;Visit&lt;/a&gt;</code></td>
+                <td><a href="https://ku.edu.af" target="_blank">Visit</a></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><code>&lt;abbr&gt;</code></td>
+                <td>title</td>
+                <td>Indicates an abbreviation or acronym.</td>
+                <td><code>&lt;abbr title="Cascading Style Sheets"&gt;CSS&lt;/abbr&gt;</code></td>
+                <td><abbr title="Cascading Style Sheets">CSS</abbr></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><code>&lt;address&gt;</code></td>
+                <td>None</td>
+                <td>Defines contact information.</td>
+                <td><code>&lt;address&gt;123 Web St.&lt;/address&gt;</code></td>
+                <td>
+                    <address>123 Web St.</address>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><code>&lt;area&gt;</code></td>
+                <td>shape, coords, href, alt</td>
+                <td>Defines an area inside an image map.</td>
+                <td><code>&lt;area shape="rect" coords="34,44,270,350" href="link.html"&gt;</code></td>
+                <td>(No visual output without &lt;map&gt; and &lt;img&gt;)</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><code>&lt;article&gt;</code></td>
+                <td>None</td>
+                <td>Specifies independent, self-contained content.</td>
+                <td><code>&lt;article&gt;News story&lt;/article&gt;</code></td>
+                <td>
+                    <article>News story</article>
+                </td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><code>&lt;aside&gt;</code></td>
+                <td>None</td>
+                <td>Defines side content related to the main content.</td>
+                <td><code>&lt;aside&gt;Sidebar info&lt;/aside&gt;</code></td>
+                <td>
+                    <aside>Sidebar info</aside>
+                </td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><code>&lt;audio&gt;</code></td>
+                <td>src, controls, autoplay, loop</td>
+                <td>Embeds audio content.</td>
+                <td><code>&lt;audio controls src="audio.mp3"&gt;&lt;/audio&gt;</code></td>
+                <td><audio controls src="audio.mp3">Audio</audio></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><code>&lt;b&gt;</code></td>
+                <td>None</td>
+                <td>Draws attention (bold) without implying importance.</td>
+                <td><code>&lt;b&gt;Bold Text&lt;/b&gt;</code></td>
+                <td><b>Bold Text</b></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><code>&lt;base&gt;</code></td>
+                <td>href, target</td>
+                <td>Specifies the base URL for all relative URLs.</td>
+                <td><code>&lt;base href="https://example.com/"&gt;</code></td>
+                <td>(No visual output, affects links)</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><code>&lt;bdi&gt;</code></td>
+                <td>None</td>
+                <td>Isolates text for bidirectional text formatting.</td>
+                <td><code>&lt;bdi&gt;username&lt;/bdi&gt;</code></td>
+                <td><bdi>username</bdi></td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td>11</td>
+                <td><code>&lt;bdo&gt;</code></td>
+                <td>dir</td>
+                <td>Overrides the current text direction.</td>
+                <td><code>&lt;bdo dir="rtl"&gt;Text&lt;/bdo&gt;</code></td>
+                <td><bdo dir="rtl">عبدالله نورستانی</bdo></td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td><code>&lt;blockquote&gt;</code></td>
+                <td>cite</td>
+                <td>Defines a block of quoted text.</td>
+                <td><code>&lt;blockquote cite="url"&gt;Quote&lt;/blockquote&gt;</code></td>
+                <td>
+                    <blockquote cite="url">Quote</blockquote>
+                </td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td><code>&lt;body&gt;</code></td>
+                <td>onload, onresize</td>
+                <td>Defines the document body.</td>
+                <td><code>&lt;body&gt;Content&lt;/body&gt;</code></td>
+                <td>Renders page content</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td><code>&lt;br&gt;</code></td>
+                <td>None</td>
+                <td>Inserts a line break.</td>
+                <td><code>Line 1&lt;br&gt;Line 2</code></td>
+                <td>Line 1<br>Line 2</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td><code>&lt;button&gt;</code></td>
+                <td>type, onclick, disabled</td>
+                <td>Defines a clickable button.</td>
+                <td><code>&lt;button&gt;Click Me&lt;/button&gt;</code></td>
+                <td><button>Click Me</button></td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td><code>&lt;canvas&gt;</code></td>
+                <td>width, height</td>
+                <td>Used to draw graphics via JavaScript.</td>
+                <td><code>&lt;canvas width="100" height="50"&gt;&lt;/canvas&gt;</code></td>
+                <td><canvas width="100" height="50" style="border:1px solid #ccc;"></canvas></td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td><code>&lt;caption&gt;</code></td>
+                <td>None</td>
+                <td>Specifies a table caption.</td>
+                <td><code>&lt;table&gt;&lt;caption&gt;Title&lt;/caption&gt;&lt;/table&gt;</code></td>
+                <td>
+                    <table style="border:1px solid #ddd;">
+                        <caption>Title</caption>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td><code>&lt;cite&gt;</code></td>
+                <td>None</td>
+                <td>Defines the title of a creative work.</td>
+                <td><code>&lt;cite&gt;Hamlet&lt;/cite&gt;</code></td>
+                <td><cite>Hamlet</cite></td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td><code>&lt;code&gt;</code></td>
+                <td>None</td>
+                <td>Displays a fragment of computer code.</td>
+                <td><code>&lt;code&gt;alert("Hi")&lt;/code&gt;</code></td>
+                <td><code>alert("Hi")</code></td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td><code>&lt;col&gt;</code></td>
+                <td>span, style</td>
+                <td>Specifies column properties in a table.</td>
+                <td>
+                    <code>
+        &lt;table&gt;&lt;col style="background:#eee"&gt;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+      </code>
+                </td>
+                <td>
+                    <table>
+                        <col style="background:#eee">
+                        <tr>
+                            <td>1</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td>21</td>
+                <td><code>&lt;colgroup&gt;</code></td>
+                <td>span</td>
+                <td>Groups columns in a table for formatting.</td>
+                <td>
+                    <code>
+        &lt;table&gt;&lt;colgroup span="2" style="background:#ddd;"&gt;&lt;/colgroup&gt;&lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;B&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+      </code>
+                </td>
+                <td>
+                    <table>
+                        <colgroup span="2" style="background:#ddd;"></colgroup>
+                        <tr>
+                            <td>A</td>
+                            <td>B</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td><code>&lt;data&gt;</code></td>
+                <td>value</td>
+                <td>Links a given content with a machine-readable value.</td>
+                <td><code>&lt;data value="123"&gt;Product&lt;/data&gt;</code></td>
+                <td><data value="123">Product</data></td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td><code>&lt;datalist&gt;</code></td>
+                <td>None</td>
+                <td>Provides autocomplete options for `<input>`.</td>
+                <td>
+                    <code>
+        &lt;input list="browsers"&gt;&lt;datalist id="browsers"&gt;&lt;option value="Chrome"&gt;&lt;/datalist&gt;
+      </code>
+                </td>
+                <td>
+                    <input list="browsers">
+                    <datalist id="browsers">
+                        <option value="Chrome">
+                        <option value="Firefox">
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td><code>&lt;dd&gt;</code></td>
+                <td>None</td>
+                <td>Defines a description in a description list.</td>
+                <td><code>&lt;dd&gt;A markup language&lt;/dd&gt;</code></td>
+                <td>
+                    <dd>A markup language</dd>
+                </td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td><code>&lt;del&gt;</code></td>
+                <td>cite, datetime</td>
+                <td>Marks text that has been deleted from a document.</td>
+                <td><code>&lt;del&gt;Old text&lt;/del&gt;</code></td>
+                <td><del>Old text</del></td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td><code>&lt;details&gt;</code></td>
+                <td>open</td>
+                <td>Creates a disclosure widget that users can open/close.</td>
+                <td>
+                    <code>&lt;details&gt;&lt;summary&gt;More&lt;/summary&gt;Details&lt;/details&gt;</code>
+                </td>
+                <td>
+                    <details>
+                        <summary>More</summary>
+                        Details
+                    </details>
+                </td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td><code>&lt;dfn&gt;</code></td>
+                <td>title</td>
+                <td>Represents the defining instance of a term.</td>
+                <td><code>&lt;dfn&gt;HTML&lt;/dfn&gt;</code></td>
+                <td><dfn>HTML</dfn></td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td><code>&lt;dialog&gt;</code></td>
+                <td>open</td>
+                <td>Defines a dialog box or popup.</td>
+                <td><code>&lt;dialog open&gt;Hello!&lt;/dialog&gt;</code></td>
+                <td>
+                    <dialog style="position: relative;" open>Hello!</dialog>
+                </td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td><code>&lt;div&gt;</code></td>
+                <td>id, class, style</td>
+                <td>A generic block container for content.</td>
+                <td><code>&lt;div&gt;Box&lt;/div&gt;</code></td>
+                <td>
+                    <div>Box</div>
+                </td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td><code>&lt;dl&gt;</code></td>
+                <td>None</td>
+                <td>Defines a description list (term/definition).</td>
+                <td>
+                    <code>
+        &lt;dl&gt;&lt;dt&gt;HTML&lt;/dt&gt;&lt;dd&gt;Markup&lt;/dd&gt;&lt;/dl&gt;
+      </code>
+                </td>
+                <td>
+                    <dl>
+                        <dt>HTML</dt>
+                        <dd>Markup</dd>
+                    </dl>
+                </td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td>31</td>
+                <td><code>&lt;dt&gt;</code></td>
+                <td>None</td>
+                <td>Defines a term in a description list.</td>
+                <td><code>&lt;dt&gt;HTML&lt;/dt&gt;</code></td>
+                <td>
+                    <dt>HTML</dt>
+                </td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td><code>&lt;em&gt;</code></td>
+                <td>None</td>
+                <td>Emphasizes text (usually italicized).</td>
+                <td><code>&lt;em&gt;Important&lt;/em&gt;</code></td>
+                <td><em>Important</em></td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td><code>&lt;embed&gt;</code></td>
+                <td>src, type, width, height</td>
+                <td>Embeds external content like videos or PDFs.</td>
+                <td><code>&lt;embed src="file.pdf" width="100" height="100"&gt;</code></td>
+                <td><embed src="file.pdf" width="100" height="100"></td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td><code>&lt;fieldset&gt;</code></td>
+                <td>disabled, form, name</td>
+                <td>Groups related elements in a form.</td>
+                <td><code>&lt;fieldset&gt;&lt;legend&gt;Info&lt;/legend&gt;&lt;/fieldset&gt;</code></td>
+                <td>
+                    <fieldset>
+                        <legend>Info</legend>
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td><code>&lt;figcaption&gt;</code></td>
+                <td>None</td>
+                <td>Defines a caption for a `<figure>`.</td>
+                <td>
+                    <code>&lt;figure&gt;&lt;img src="x.jpg"&gt;&lt;figcaption&gt;Caption&lt;/figcaption&gt;&lt;/figure&gt;</code>
+                </td>
+                <td>
+                    <figure>
+                        <img src="#" alt="placeholder" style="width:40px;height:40px;">
+                        <figcaption>Caption</figcaption>
+                    </figure>
+                </td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td><code>&lt;figure&gt;</code></td>
+                <td>None</td>
+                <td>Groups media with a caption.</td>
+                <td>
+                    <code>&lt;figure&gt;&lt;img src="x.jpg"&gt;&lt;/figure&gt;</code>
+                </td>
+                <td>
+                    <figure><img src="#" alt="placeholder" style="width:40px;height:40px;"></figure>
+                </td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td><code>&lt;footer&gt;</code></td>
+                <td>None</td>
+                <td>Defines a footer for a section or page.</td>
+                <td><code>&lt;footer&gt;End notes&lt;/footer&gt;</code></td>
+                <td>
+                    <footer>End notes</footer>
+                </td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td><code>&lt;form&gt;</code></td>
+                <td>action, method, target</td>
+                <td>Defines an HTML form for user input.</td>
+                <td><code>&lt;form action="#"&gt;&lt;/form&gt;</code></td>
+                <td>
+                    <form action="#">(form area)</form>
+                </td>
+            </tr>
+            <tr>
+                <td>39</td>
+                <td><code>&lt;h1&gt;</code></td>
+                <td>None</td>
+                <td>Largest heading level.</td>
+                <td><code>&lt;h1&gt;Title&lt;/h1&gt;</code></td>
+                <td>
+                    <h1>Title</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td><code>&lt;h2&gt;</code></td>
+                <td>None</td>
+                <td>Second-largest heading level.</td>
+                <td><code>&lt;h2&gt;Subtitle&lt;/h2&gt;</code></td>
+                <td>
+                    <h2>Subtitle</h2>
+                </td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td>41</td>
+                <td><code>&lt;h3&gt;</code></td>
+                <td>None</td>
+                <td>Third-level heading.</td>
+                <td><code>&lt;h3&gt;Section Heading&lt;/h3&gt;</code></td>
+                <td>
+                    <h3>Section Heading</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>42</td>
+                <td><code>&lt;h4&gt;</code></td>
+                <td>None</td>
+                <td>Fourth-level heading.</td>
+                <td><code>&lt;h4&gt;Subsection&lt;/h4&gt;</code></td>
+                <td>
+                    <h4>Subsection</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>43</td>
+                <td><code>&lt;h5&gt;</code></td>
+                <td>None</td>
+                <td>Fifth-level heading.</td>
+                <td><code>&lt;h5&gt;Subheading&lt;/h5&gt;</code></td>
+                <td>
+                    <h5>Subheading</h5>
+                </td>
+            </tr>
+            <tr>
+                <td>44</td>
+                <td><code>&lt;h6&gt;</code></td>
+                <td>None</td>
+                <td>Smallest heading level.</td>
+                <td><code>&lt;h6&gt;Minor Heading&lt;/h6&gt;</code></td>
+                <td>
+                    <h6>Minor Heading</h6>
+                </td>
+            </tr>
+            <tr>
+                <td>45</td>
+                <td><code>&lt;head&gt;</code></td>
+                <td>None</td>
+                <td>Container for metadata (title, links, scripts).</td>
+                <td><code>&lt;head&gt;&lt;title&gt;Page&lt;/title&gt;&lt;/head&gt;</code></td>
+                <td>(No visible output; used internally)</td>
+            </tr>
+            <tr>
+                <td>46</td>
+                <td><code>&lt;header&gt;</code></td>
+                <td>None</td>
+                <td>Defines the introductory content of a section/page.</td>
+                <td><code>&lt;header&gt;Welcome!&lt;/header&gt;</code></td>
+                <td>
+                    <header>Welcome!</header>
+                </td>
+            </tr>
+            <tr>
+                <td>47</td>
+                <td><code>&lt;hr&gt;</code></td>
+                <td>None</td>
+                <td>Inserts a horizontal rule (thematic break).</td>
+                <td><code>Content&lt;hr&gt;More content</code></td>
+                <td>Content
+                    <hr>More content
+                </td>
+            </tr>
+            <tr>
+                <td>48</td>
+                <td><code>&lt;html&gt;</code></td>
+                <td>lang, xmlns</td>
+                <td>Root element of an HTML document.</td>
+                <td><code>&lt;html lang="en"&gt;&lt;/html&gt;</code></td>
+                <td>(Defines the whole page)</td>
+            </tr>
+            <tr>
+                <td>49</td>
+                <td><code>&lt;i&gt;</code></td>
+                <td>None</td>
+                <td>Italicizes text without semantic emphasis.</td>
+                <td><code>&lt;i&gt;Italic text&lt;/i&gt;</code></td>
+                <td><i>Italic text</i></td>
+            </tr>
+            <tr>
+                <td>50</td>
+                <td><code>&lt;iframe&gt;</code></td>
+                <td>src, width, height, frameborder</td>
+                <td>Embeds another HTML page into the current page.</td>
+                <td><code>&lt;iframe src="https://example.com" width="200"&gt;&lt;/iframe&gt;</code></td>
+                <td><iframe src="https://ku.edu.af/" width="200" height="100"></iframe></td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td>51</td>
+                <td><code>&lt;img&gt;</code></td>
+                <td>src, alt, width, height, title</td>
+                <td>Embeds an image in the document.</td>
+                <td><code>&lt;img src="image.jpg" alt="Sample"&gt;</code></td>
+                <td><img src="https://via.placeholder.com/50" alt="Sample"></td>
+            </tr>
+            <tr>
+                <td>52</td>
+                <td><code>&lt;input&gt;</code></td>
+                <td>type, name, value, placeholder, required</td>
+                <td>Defines an input field.</td>
+                <td><code>&lt;input type="text" placeholder="Name"&gt;</code></td>
+                <td><input type="text" placeholder="Name"></td>
+            </tr>
+            <tr>
+                <td>53</td>
+                <td><code>&lt;ins&gt;</code></td>
+                <td>cite, datetime</td>
+                <td>Marks text that has been inserted.</td>
+                <td><code>&lt;ins&gt;New text&lt;/ins&gt;</code></td>
+                <td><ins>New text</ins></td>
+            </tr>
+            <tr>
+                <td>54</td>
+                <td><code>&lt;kbd&gt;</code></td>
+                <td>None</td>
+                <td>Represents user input via keyboard.</td>
+                <td><code>&lt;kbd&gt;Ctrl+C&lt;/kbd&gt;</code></td>
+                <td><kbd>Ctrl+C</kbd></td>
+            </tr>
+            <tr>
+                <td>55</td>
+                <td><code>&lt;label&gt;</code></td>
+                <td>for</td>
+                <td>Labels an input element for accessibility.</td>
+                <td><code>&lt;label for="email"&gt;Email&lt;/label&gt;</code></td>
+                <td><label for="email">Email</label></td>
+            </tr>
+            <tr>
+                <td>56</td>
+                <td><code>&lt;legend&gt;</code></td>
+                <td>None</td>
+                <td>Provides a caption for a `<fieldset>`.</td>
+                <td>
+                    <code>&lt;fieldset&gt;&lt;legend&gt;User Info&lt;/legend&gt;&lt;/fieldset&gt;</code>
+                </td>
+                <td>
+                    <fieldset>
+                        <legend>User Info</legend>
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>57</td>
+                <td><code>&lt;li&gt;</code></td>
+                <td>value (for <code>&lt;ol&gt;</code>)</td>
+                <td>Defines a list item in ordered/unordered lists.</td>
+                <td><code>&lt;li&gt;Item&lt;/li&gt;</code></td>
+                <td>
+                    <ul>
+                        <li>Item</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>58</td>
+                <td><code>&lt;link&gt;</code></td>
+                <td>rel, href, type</td>
+                <td>Links external resources like CSS.</td>
+                <td><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></td>
+                <td>(No visual output)</td>
+            </tr>
+            <tr>
+                <td>59</td>
+                <td><code>&lt;main&gt;</code></td>
+                <td>None</td>
+                <td>Specifies the primary content of the document.</td>
+                <td><code>&lt;main&gt;Main content&lt;/main&gt;</code></td>
+                <td>
+                    <main>Main content</main>
+                </td>
+            </tr>
+            <tr>
+                <td>60</td>
+                <td><code>&lt;map&gt;</code></td>
+                <td>name</td>
+                <td>Defines an image map (with clickable areas).</td>
+                <td>
+                    <code>
+                &lt;map name="imgmap"&gt;&lt;area shape="rect" coords="34,44,270,350" href="#"&gt;&lt;/map&gt;
+              </code>
+                </td>
+                <td>(Used with <code>&lt;img usemap&gt;</code>)</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td>61</td>
+                <td><code>&lt;mark&gt;</code></td>
+                <td>None</td>
+                <td>Highlights or marks text for reference.</td>
+                <td><code>&lt;mark&gt;Important&lt;/mark&gt;</code></td>
+                <td><mark>Important</mark></td>
+            </tr>
+            <tr>
+                <td>62</td>
+                <td><code>&lt;meta&gt;</code></td>
+                <td>charset, name, content, http-equiv</td>
+                <td>Defines metadata for the document.</td>
+                <td><code>&lt;meta charset="UTF-8"&gt;</code></td>
+                <td>(No visual output)</td>
+            </tr>
+            <tr>
+                <td>63</td>
+                <td><code>&lt;meter&gt;</code></td>
+                <td>value, min, max, low, high, optimum</td>
+                <td>Displays a scalar measurement within a range.</td>
+                <td><code>&lt;meter value="0.7"&gt;&lt;/meter&gt;</code></td>
+                <td><meter value="0.7"></meter></td>
+            </tr>
+            <tr>
+                <td>64</td>
+                <td><code>&lt;nav&gt;</code></td>
+                <td>None</td>
+                <td>Defines a navigation section.</td>
+                <td><code>&lt;nav&gt;Menu&lt;/nav&gt;</code></td>
+                <td>
+                    <nav>Menu</nav>
+                </td>
+            </tr>
+            <tr>
+                <td>65</td>
+                <td><code>&lt;noscript&gt;</code></td>
+                <td>None</td>
+                <td>Displays content if JavaScript is disabled.</td>
+                <td><code>&lt;noscript&gt;Enable JS&lt;/noscript&gt;</code></td>
+                <td><noscript>Enable JS</noscript></td>
+            </tr>
+            <tr>
+                <td>66</td>
+                <td><code>&lt;object&gt;</code></td>
+                <td>data, type, width, height</td>
+                <td>Embeds multimedia, like PDFs or Flash (deprecated).</td>
+                <td><code>&lt;object data="file.pdf" type="application/pdf" width="100"&gt;&lt;/object&gt;</code></td>
+                <td><object data="file.pdf" type="application/pdf" width="100"></object></td>
+            </tr>
+            <tr>
+                <td>67</td>
+                <td><code>&lt;ol&gt;</code></td>
+                <td>type, reversed, start</td>
+                <td>Defines an ordered (numbered) list.</td>
+                <td>
+                    <code>
+                &lt;ol&gt;&lt;li&gt;First&lt;/li&gt;&lt;li&gt;Second&lt;/li&gt;&lt;/ol&gt;
+              </code>
+                </td>
+                <td>
+                    <ol>
+                        <li>First</li>
+                        <li>Second</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td>68</td>
+                <td><code>&lt;optgroup&gt;</code></td>
+                <td>label, disabled</td>
+                <td>Groups options within a <code>&lt;select&gt;</code>.</td>
+                <td>
+                    <code>
+                &lt;select&gt;&lt;optgroup label="Fruits"&gt;&lt;option&gt;Apple&lt;/option&gt;&lt;/optgroup&gt;&lt;/select&gt;
+              </code>
+                </td>
+                <td>
+                    <select>
+                        <optgroup label="Fruits">
+                            <option>Apple</option>
+                        </optgroup>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>69</td>
+                <td><code>&lt;option&gt;</code></td>
+                <td>value, selected, disabled</td>
+                <td>Defines an item in a dropdown list.</td>
+                <td>
+                    <code>
+                &lt;select&gt;&lt;option value="1"&gt;One&lt;/option&gt;&lt;/select&gt;
+              </code>
+                </td>
+                <td>
+                    <select>
+                        <option value="1">One</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>70</td>
+                <td><code>&lt;output&gt;</code></td>
+                <td>for, name</td>
+                <td>Displays the result of a calculation or user action.</td>
+                <td><code>&lt;output&gt;42&lt;/output&gt;</code></td>
+                <td><output>42</output></td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td>71</td>
+                <td><code>&lt;p&gt;</code></td>
+                <td>None</td>
+                <td>Defines a paragraph of text.</td>
+                <td><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></td>
+                <td>
+                    <p>This is a paragraph.</p>
+                </td>
+            </tr>
+            <tr>
+                <td>72</td>
+                <td><code>&lt;param&gt;</code></td>
+                <td>name, value</td>
+                <td>Defines parameters for `<object>` elements.</td>
+                <td><code>&lt;param name="autoplay" value="true"&gt;</code></td>
+                <td>(Used inside <code>&lt;object&gt;</code>, no direct output)</td>
+            </tr>
+            <tr>
+                <td>73</td>
+                <td><code>&lt;picture&gt;</code></td>
+                <td>None</td>
+                <td>Contains multiple `
+                    <source>` elements for responsive images.
+                </td>
+                <td>
+                    <code>
+                &lt;picture&gt;&lt;source srcset="img.jpg" type="image/jpeg"&gt;&lt;img src="fallback.jpg"&gt;&lt;/picture&gt;
+              </code>
+                </td>
+                <td>
+                    <picture>
+                        <source srcset="https://via.placeholder.com/50" type="image/jpeg">
+                        <img src="https://via.placeholder.com/50" alt="Fallback">
+                    </picture>
+                </td>
+            </tr>
+            <tr>
+                <td>74</td>
+                <td><code>&lt;pre&gt;</code></td>
+                <td>None</td>
+                <td>Defines preformatted text.</td>
+                <td><code>&lt;pre&gt;  Line with space&lt;/pre&gt;</code></td>
+                <td>
+                    <pre>  Line with space</pre>
+                </td>
+            </tr>
+            <tr>
+                <td>75</td>
+                <td><code>&lt;progress&gt;</code></td>
+                <td>value, max</td>
+                <td>Displays progress of a task.</td>
+                <td><code>&lt;progress value="70" max="100"&gt;&lt;/progress&gt;</code></td>
+                <td><progress value="70" max="100"></progress></td>
+            </tr>
+            <tr>
+                <td>76</td>
+                <td><code>&lt;q&gt;</code></td>
+                <td>cite</td>
+                <td>Defines a short inline quotation.</td>
+                <td><code>&lt;q&gt;Quoted text&lt;/q&gt;</code></td>
+                <td><q>Quoted text</q></td>
+            </tr>
+            <tr>
+                <td>77</td>
+                <td><code>&lt;rp&gt;</code></td>
+                <td>None</td>
+                <td>Provides fallback for browsers that don’t support ruby annotations.</td>
+                <td><code>&lt;ruby&gt;漢&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;kan&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;</code>
+                </td>
+                <td>
+                    <ruby>漢<rp>(</rp>
+                        <rt>kan</rt>
+                        <rp>)</rp>
+                    </ruby>
+                </td>
+            </tr>
+            <tr>
+                <td>78</td>
+                <td><code>&lt;rt&gt;</code></td>
+                <td>None</td>
+                <td>Defines the explanation (annotation) for `<ruby>` text.</td>
+                <td><code>&lt;ruby&gt;漢&lt;rt&gt;kan&lt;/rt&gt;&lt;/ruby&gt;</code></td>
+                <td><ruby>漢<rt>kan</rt></ruby></td>
+            </tr>
+            <tr>
+                <td>79</td>
+                <td><code>&lt;ruby&gt;</code></td>
+                <td>None</td>
+                <td>Defines ruby annotations (Asian typography).</td>
+                <td><code>&lt;ruby&gt;語&lt;rt&gt;go&lt;/rt&gt;&lt;/ruby&gt;</code></td>
+                <td><ruby>語<rt>go</rt></ruby></td>
+            </tr>
+            <tr>
+                <td>80</td>
+                <td><code>&lt;s&gt;</code></td>
+                <td>None</td>
+                <td>Renders text with a strikethrough (no longer relevant).</td>
+                <td><code>&lt;s&gt;Deprecated&lt;/s&gt;</code></td>
+                <td><s>Deprecated</s></td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td>81</td>
+                <td><code>&lt;samp&gt;</code></td>
+                <td>None</td>
+                <td>Represents sample output from a computer program.</td>
+                <td><code>&lt;samp&gt;Hello, World!&lt;/samp&gt;</code></td>
+                <td><samp>Hello, World!</samp></td>
+            </tr>
+            <tr>
+                <td>82</td>
+                <td><code>&lt;script&gt;</code></td>
+                <td>src, type, async, defer</td>
+                <td>Embeds or references JavaScript code.</td>
+                <td><code>&lt;script&gt;alert('Hi')&lt;/script&gt;</code></td>
+                <td>(May trigger JS; often hidden)</td>
+            </tr>
+            <tr>
+                <td>83</td>
+                <td><code>&lt;section&gt;</code></td>
+                <td>None</td>
+                <td>Defines a section in a document.</td>
+                <td><code>&lt;section&gt;About Us&lt;/section&gt;</code></td>
+                <td>
+                    <section>About Us</section>
+                </td>
+            </tr>
+            <tr>
+                <td>84</td>
+                <td><code>&lt;select&gt;</code></td>
+                <td>name, multiple, size</td>
+                <td>Creates a dropdown or multi-select menu.</td>
+                <td>
+                    <code>
+                &lt;select&gt;&lt;option&gt;One&lt;/option&gt;&lt;/select&gt;
+              </code>
+                </td>
+                <td><select>
+                        <option>One</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>85</td>
+                <td><code>&lt;small&gt;</code></td>
+                <td>None</td>
+                <td>Renders text in a smaller font size.</td>
+                <td><code>&lt;small&gt;Fine print&lt;/small&gt;</code></td>
+                <td><small>Fine print</small></td>
+            </tr>
+            <tr>
+                <td>86</td>
+                <td><code>&lt;source&gt;</code></td>
+                <td>src, type, media</td>
+                <td>Defines media source for `<video>`, `<audio>`, or `<picture>`.</td>
+                <td><code>&lt;source src="movie.mp4" type="video/mp4"&gt;</code></td>
+                <td>(Used inside media tags)</td>
+            </tr>
+            <tr>
+                <td>87</td>
+                <td><code>&lt;span&gt;</code></td>
+                <td>id, class, style</td>
+                <td>Generic inline container for styling/JS.</td>
+                <td><code>&lt;span style="color:red"&gt;Red&lt;/span&gt;</code></td>
+                <td><span style="color:red">Red</span></td>
+            </tr>
+            <tr>
+                <td>88</td>
+                <td><code>&lt;strong&gt;</code></td>
+                <td>None</td>
+                <td>Indicates strong importance (usually bold).</td>
+                <td><code>&lt;strong&gt;Warning&lt;/strong&gt;</code></td>
+                <td><strong>Warning</strong></td>
+            </tr>
+            <tr>
+                <td>89</td>
+                <td><code>&lt;style&gt;</code></td>
+                <td>type, media</td>
+                <td>Defines internal CSS styles.</td>
+                <td>
+                    <code>
+                &lt;style&gt;body {color:red;}&lt;/style&gt;
+              </code>
+                </td>
+                <td>(Affects styling, no direct output)</td>
+            </tr>
+            <tr>
+                <td>90</td>
+                <td><code>&lt;sub&gt;</code></td>
+                <td>None</td>
+                <td>Defines subscripted text.</td>
+                <td><code>H&lt;sub&gt;2&lt;/sub&gt;O</code></td>
+                <td>H<sub>2</sub>O</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td>91</td>
+                <td><code>&lt;summary&gt;</code></td>
+                <td>None</td>
+                <td>Defines a visible heading for a `<details>` element.</td>
+                <td><code>&lt;details&gt;&lt;summary&gt;More Info&lt;/summary&gt;Details&lt;/details&gt;</code></td>
+                <td>
+                    <details>
+                        <summary>More Info</summary>Details
+                    </details>
+                </td>
+            </tr>
+            <tr>
+                <td>92</td>
+                <td><code>&lt;sup&gt;</code></td>
+                <td>None</td>
+                <td>Defines superscripted text.</td>
+                <td><code>x&lt;sup&gt;2&lt;/sup&gt;</code></td>
+                <td>x<sup>2</sup></td>
+            </tr>
+            <tr>
+                <td>93</td>
+                <td><code>&lt;svg&gt;</code></td>
+                <td>width, height, viewBox, xmlns</td>
+                <td>Container for scalable vector graphics.</td>
+                <td>
+                    <code>
+        &lt;svg width="40" height="40"&gt;&lt;circle cx="20" cy="20" r="10" fill="blue"/&gt;&lt;/svg&gt;
+      </code>
+                </td>
+                <td>
+                    <svg width="40" height="40">
+                        <circle cx="20" cy="20" r="10" fill="blue" />
+                    </svg>
+                </td>
+            </tr>
+            <tr>
+                <td>94</td>
+                <td><code>&lt;table&gt;</code></td>
+                <td>border, cellpadding, cellspacing</td>
+                <td>Defines a table.</td>
+                <td><code>&lt;table&gt;&lt;tr&gt;&lt;td&gt;Cell&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Cell</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>95</td>
+                <td><code>&lt;tbody&gt;</code></td>
+                <td>None</td>
+                <td>Groups the body content in a table.</td>
+                <td>
+                    <code>
+        &lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Data&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+      </code>
+                </td>
+                <td>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Data</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>96</td>
+                <td><code>&lt;td&gt;</code></td>
+                <td>colspan, rowspan</td>
+                <td>Defines a cell in a table row.</td>
+                <td><code>&lt;td&gt;Value&lt;/td&gt;</code></td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Value</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>97</td>
+                <td><code>&lt;template&gt;</code></td>
+                <td>None</td>
+                <td>Holds client-side content that is not rendered when page loads.</td>
+                <td>
+                    <code>
+        &lt;template&gt;&lt;p&gt;Hidden&lt;/p&gt;&lt;/template&gt;
+      </code>
+                </td>
+                <td>(Content remains hidden until activated by JS)</td>
+            </tr>
+            <tr>
+                <td>98</td>
+                <td><code>&lt;textarea&gt;</code></td>
+                <td>rows, cols, name, placeholder</td>
+                <td>Defines a multi-line text input control.</td>
+                <td><code>&lt;textarea rows="2" cols="20"&gt;&lt;/textarea&gt;</code></td>
+                <td><textarea rows="2" cols="20"></textarea></td>
+            </tr>
+            <tr>
+                <td>99</td>
+                <td><code>&lt;tfoot&gt;</code></td>
+                <td>None</td>
+                <td>Groups footer content in a table.</td>
+                <td>
+                    <code>
+        &lt;table&gt;&lt;tfoot&gt;&lt;tr&gt;&lt;td&gt;Total&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;&lt;/table&gt;
+      </code>
+                </td>
+                <td>
+                    <table>
+                        <tfoot>
+                            <tr>
+                                <td>Total</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>100</td>
+                <td><code>&lt;th&gt;</code></td>
+                <td>colspan, rowspan, scope</td>
+                <td>Defines a header cell in a table.</td>
+                <td><code>&lt;th&gt;Header&lt;/th&gt;</code></td>
+                <td>
+                    <table>
+                        <tr>
+                            <th>Header</th>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td>101</td>
+                <td><code>&lt;thead&gt;</code></td>
+                <td>None</td>
+                <td>Groups the header content in a table.</td>
+                <td>
+                    <code>
+        &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Head&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;/table&gt;
+      </code>
+                </td>
+                <td>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Head</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td><code>&lt;time&gt;</code></td>
+                <td>datetime</td>
+                <td>Represents a specific time or date.</td>
+                <td><code>&lt;time datetime="2025-06-25"&gt;June 25&lt;/time&gt;</code></td>
+                <td><time datetime="2025-06-25">June 25</time></td>
+            </tr>
+            <tr>
+                <td>103</td>
+                <td><code>&lt;title&gt;</code></td>
+                <td>None</td>
+                <td>Defines the document title shown in browser tabs.</td>
+                <td><code>&lt;title&gt;My Page&lt;/title&gt;</code></td>
+                <td>(Visible in browser tab only)</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td><code>&lt;tr&gt;</code></td>
+                <td>None</td>
+                <td>Defines a row in a table.</td>
+                <td>
+                    <code>
+        &lt;table&gt;&lt;tr&gt;&lt;td&gt;Row&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+      </code>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>Row</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>105</td>
+                <td><code>&lt;track&gt;</code></td>
+                <td>kind, src, srclang, label, default</td>
+                <td>Provides text tracks for media (like subtitles).</td>
+                <td><code>&lt;track src="subs.vtt" kind="subtitles" srclang="en"&gt;</code></td>
+                <td>(Used inside <code>&lt;video&gt;</code>)</td>
+            </tr>
+            <tr>
+                <td>106</td>
+                <td><code>&lt;u&gt;</code></td>
+                <td>None</td>
+                <td>Renders text with underline (non-semantic).</td>
+                <td><code>&lt;u&gt;Underlined&lt;/u&gt;</code></td>
+                <td><u>Underlined</u></td>
+            </tr>
+            <tr>
+                <td>107</td>
+                <td><code>&lt;ul&gt;</code></td>
+                <td>None</td>
+                <td>Defines an unordered (bulleted) list.</td>
+                <td>
+                    <code>
+        &lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;
+      </code>
+                </td>
+                <td>
+                    <ul>
+                        <li>Item</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>108</td>
+                <td><code>&lt;var&gt;</code></td>
+                <td>None</td>
+                <td>Defines a variable in math or programming context.</td>
+                <td><code>&lt;var&gt;x&lt;/var&gt; + 1</code></td>
+                <td><var>x</var> + 1</td>
+            </tr>
+            <tr>
+                <td>109</td>
+                <td><code>&lt;video&gt;</code></td>
+                <td>src, controls, autoplay, width, height</td>
+                <td>Embeds video content in the document.</td>
+                <td><code>&lt;video src="vid.mp4" controls width="200"&gt;&lt;/video&gt;</code></td>
+                <td><video controls width="200">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    </video></td>
+            </tr>
+            <tr>
+                <td>110</td>
+                <td><code>&lt;wbr&gt;</code></td>
+                <td>None</td>
+                <td>Suggests a line break opportunity in long text.</td>
+                <td><code>Super&lt;wbr&gt;califragilistic</code></td>
+                <td>Super<wbr>califragilistic</td>
+            </tr>
+        </tbody>
+
+
+
+    </table>
+    <script>
+        function toggleMenu() {
+            document.getElementById('labelMenu').classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>

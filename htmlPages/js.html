@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Cheetsheat</title>
+    <style>
+        @font-face {
+            font-family: 'Pacifico';
+            src: url('../fonts/Pacifico-Regular.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: "Andada";
+            src: url('../fonts/AndadaPro-Italic-VariableFont_wght.ttf')format('truetype');
+        }
+
+        @font-face {
+            font-family: "man";
+            src: url('../fonts/Manrope-VariableFont_wght.ttf')format('truetype');
+        }
+
+        * {
+            color: black;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Andada";
+            text-align: justify;
+
+        }
+
+        .top {
+            position: fixed;
+            height: 200px;
+            width: 100%;
+            z-index: 200;
+        }
+
+        .nav {
+            height: 80px;
+            background-color: dodgerblue;
+            font-size: 20px;
+            font-weight: 700;
+            border: 0.1px solid black;
+            border-top: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .right,
+        .left {
+            margin: 10px;
+            padding: 10px;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid white;
+            border: none;
+        }
+
+        .navbar li a:hover {
+            color: black;
+        }
+
+        .abdullah {
+            margin-top: 10px;
+            display: block;
+        }
+
+        .abd {
+            font-family: "Pacifico";
+            color: white;
+        }
+
+        .label {
+            background-color: lightgoldenrodyellow;
+            border-bottom: solid 5px dodgerblue;
+            display: flex;
+        }
+
+        .label .itemLabel {
+            padding: 8px;
+
+        }
+
+        .label .itemLabel:hover {
+            cursor: pointer;
+            background-color: rgb(232, 232, 187);
+        }
+
+        .hero {
+            display: flex;
+            font-size: 1.1rem;
+        }
+
+
+        .leftHero ul li {
+            list-style-type: none;
+            padding: 5px;
+            border: 0.5px solid black;
+        }
+
+        .leftHero ul li:first-child {
+            border-radius: 4px 4px 0px 0px;
+        }
+
+        .leftHero ul li:last-child {
+            border-radius: 0px 0px 4px 4px;
+        }
+
+        .leftHero ul li:hover {
+            cursor: pointer;
+            background-color: lightgoldenrodyellow;
+        }
+
+        .sidebar {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            width: 25%;
+            height: 120vh;
+            background-color: lightgoldenrodyellow;
+
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            box-shadow: 0px 0px 10px black;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar ul li:hover {
+            background-color: rgb(232, 232, 187);
+        }
+
+        .sidebar ul li {
+            margin: 7px;
+            padding: 7px;
+        }
+
+        .sidebar ul a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .main-content {
+            width: 75%;
+            padding-left: 10px;
+            padding-right: 40px;
+            margin-left: 30%;
+            padding-top: 140px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .image {
+            padding-bottom: 10px;
+        }
+
+        .h3-heading {
+            color: rgb(46, 42, 42);
+            margin: 10px 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .main-text {
+            font-family: 'man';
+            font-size: 1.1rem;
+        }
+
+        .imageCode {
+            padding-top: 10px;
+        }
+
+        .bold {
+            font-size: 1.3rem;
+            font-family: "Andada";
+            font-weight: 900;
+        }
+
+        .footer {
+            z-index: 300;
+            width: 100%;
+            margin-top: 50px;
+            height: 300px;
+            background-color: dodgerblue;
+
+        }
+
+        .right a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .label a {
+            text-decoration: none;
+        }
+
+        .right {
+            display: flex;
+        }
+
+        body {
+            zoom: 90%;
+        }
+
+        @media (max-width: 900px) {
+
+            .sidebar,
+            .leftHero.sidebar {
+                display: none !important;
+            }
+
+            .main-content {
+                width: 100% !important;
+                margin-left: 0 !important;
+                padding-left: 2vw !important;
+                padding-right: 2vw !important;
+            }
+
+            .hero {
+                flex-direction: column !important;
+                align-items: stretch !important;
+            }
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+            margin: 10px;
+            color: white;
+        }
+
+        @media (max-width: 900px) {
+            .label {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                width: 100%;
+                background: dodgerblue;
+                z-index: 1000;
+            }
+
+            .label.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .left {
+                display: none !important;
+            }
+
+            .abd {
+                font-size: 1rem;
+            }
+
+            .right {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .label {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                width: 100%;
+                background: dodgerblue;
+                z-index: 1000;
+            }
+
+            .label a div {
+                color: white;
+            }
+
+
+            .label.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .main-content,
+            .file-container,
+            .hero-header {
+                padding-left: 2vw !important;
+                padding-right: 2vw !important;
+                margin-left: 0 !important;
+                width: 100% !important;
+                flex-direction: rows !important;
+                align-items: stretch !important;
+            }
+
+            .file-card {
+                width: 90vw;
+                height: auto;
+                min-width: 0;
+            }
+
+            .headery {
+                width: 95vw;
+                font-size: 1.1rem;
+                padding: 5px;
+            }
+
+            .footer,
+            .nav,
+            .top {
+                font-size: 1em;
+                flex-direction: column;
+                height: auto;
+            }
+
+            .right {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0;
+                padding: 5px;
+            }
+
+            .abd {
+                font-size: 1rem !important;
+            }
+
+            .file-card img {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .abd {
+                font-size: 1rem !important;
+            }
+        }
+
+        .hero {
+            padding: 0px 10px 0px 10px;
+        }
+
+        :root {
+            --header-height: 130px;
+        }
+
+        .center {
+            margin-top: var(--header-height);
+        }
+
+        img,
+        audio,
+        video,
+        iframe {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="nav">
+
+            <div class="right">
+                <a href="../index.html">
+                    <img src="../image/mainPageImage/home_12074276.png"
+                        style="border: 1px solid white; border-radius: 50%; padding: 2px;" height="50" width="50"
+                        alt="">
+                </a>
+                <div style="width: 70px;"></div>
+                <img src="../image/mainPageImage/abdullahNooristani.png" width="40" height="50"
+                    style=" margin-left:10px;border-radius: 10px;" alt="">
+                <div style="width: 10px;"></div>
+                <h2 class="abd"> Abdullah Nooristani</h2>
+                <div style="width: 70px;"></div>
+                <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+            </div>
+
+        </div>
+        <div class="label" id="labelMenu">
+            <a href="./html.html">
+                <div class="itemLabel">HTML</div>
+            </a>
+            <a href="./css.html">
+                <div class="itemLabel">CSS</div>
+            </a>
+            <a href="./js.html">
+                <div class="itemLabel">JAVASCRIPT</div>
+            </a>
+            <a href="./presentation.html">
+                <div class="itemLabel">PRESENTATIONS</div>
+            </a>
+            <a href="./cplusplus.html">
+                <div class="itemLabel">C++</div>
+            </a>
+            <a href="./java.html">
+                <div class="itemLabel">JAVA</div>
+            </a>
+            <a href="./DSAProject/dsaProject.html">
+                <div class="itemLabel">DSA PROJECT</div>
+            </a>
+            <a href="./paperHomeworks.html">
+                <div class="itemLabel">DSA PAPAER HOMEWORKS</div>
+            </a>
+            <a href="./WebProject/html/index.html" target="_blank">
+                <div class="itemLabel">WEB PROJECT</div>
+            </a>
+            <a href="./paperHomeworks.html">
+                <div class="itemLabel">WEB PAPAER HOMEWORKS</div>
+            </a>
+        </div>
+    </div>
+    <div class="hero">
+
+        <div class="leftHero sidebar">
+            <ul>
+                <a href="#top">
+                    <li>JavaScript Overview and History</li>
+                </a>
+                <a href="#hello">
+                    <li>JavaScript Hello World Program</li>
+                </a>
+                <a href="#basic">
+                    <li>JavaScript very basic syntax</li>
+                </a>
+                <a href="#variables">
+                    <li>JS variables, data types, type conversion </li>
+                </a>
+                <a href="#input">
+                    <li>JS Operators, JavaScript Comments</li>
+                </a>
+                <a href="#if">
+                    <li>JS Decision Making (if, else, switch)</li>
+                </a>
+                <a href="#loop">
+                    <li>JavaScript Loops, and Loops statements</li>
+                </a>
+                <a href="#string">
+                    <li>JavaScript Functions</li>
+                </a>
+                <a href="#class">
+                    <li>JavaScript Classes, Objects, and Methods</li>
+                </a>
+                <a href="#constructor">
+                    <li>JavaScript Constructors</li>
+                </a>
+                <a href="#inheritance">
+                    <li>JavaScript Inheritance</li>
+                </a>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <h1>JavaScript Cheetsheat and Basics Syntax</h1>
+                <div style="width: 50px;"></div>
+                <div>
+                    <img src="../image/mainPageImage/javaScript.png" height="80" width="80" alt="java Image">
+                </div>
+                <br>
+            </div>
+            <hr>
+            <h3 class="h3-heading" id="overview">JavaScript Overview and History </h3>
+            <p class="main-text">JavaScript is a dynamic computer programming language. It is lightweight and most
+                commonly used as a part of web pages, whose implementations allow client-side script to interact with
+                the user and make dynamic pages. It is an interpreted programming language with object-oriented
+                capabilities.
+                JavaScript is a single-threaded programming language that we can use for client-side or server-side
+                development. It is a dynamically typed programming language, which means that we dont care about
+                variable data types while writing the JavaScript code. Also, it contains the control statements,
+                operators, and objects like Array, Math, Data, etc.
+                JavaScript was first known as LiveScript, but Netscape changed its name to JavaScript, possibly because
+                of the excitement being generated by Java. JavaScript made its first appearance in Netscape 2.0 in 1995
+                with the name LiveScript. The general-purpose core of the language has been embedded in Netscape and
+                other web browsers.</p>
+            <br>
+            <hr>
+            <br>
+            <h3 class="h3-heading">
+                JavaScript Hello World Program
+            </h3>
+            <p class="main-text">Printing or to showing an output of "Hello World" on the output screen (console) is the
+                first program in JavaScript and other programming languages. </p>
+            <div class="imageCode" id="basic">
+                <img src="../image/jsImages/jsHelloWorld.png" alt="">
+            </div><br>
+            <hr>
+            <h3 class="h3-heading">
+                JavaScript Basic Syntax
+            </h3>
+            <dl>
+                <dt class="main-text"><span class="bold">Script
+                        tag</span>&ThinSpace;&ThinSpace;&ThinSpace;-&ThinSpace;&ThinSpace;&ThinSpace;<span
+                        class="code">&lt;script&gt;....&lt;/script&gt;</span> JavaScript syntax comprises a set of rules
+                    that define how to construct a JavaScript code. JavaScript can be implemented using JavaScript
+                    statements that are placed within the &lt;script&gt;....&lt;/script&gt; HTML tags in a web page.
+                </dt>
+                <dt class="main-text "><span class="bold">JavaScript variables</span><br>
+                    <div class="codeImage"><img src="../image/jsImages/jsVariables.png" alt=""></div>
+                </dt>
+                <dt class="main-text "><span class="bold">Whitespace and Line breaks</span> - JavaScript ignores spaces,
+                    tabs, and newlines that appear in JavaScript programs. You can use spaces, tabs, and newlines freely
+                    in your program and you are free to format and indent your programs in a neat and consistent way
+                    that makes the code easy to read and understand.</dt>
+                <dt class="main-text "><span class="bold">Semicolons are Optional </span>- Simple statements in
+                    JavaScript are generally followed by a semicolon character, just as they are in C, C++, and Java.
+                    JavaScript, however, allows you to omit this semicolon if each of your statements are placed on a
+                    separate line. For example, the following code could be written without semicolons.</dt>
+                <dt class="main-text "><span class="bold">Case Sensitivity </span>- JavaScript is a case-sensitive
+                    language. This means that the language keywords, variables, function names, and any other
+                    identifiers must always be typed with a consistent capitalization of letters.So the identifiers Time
+                    and TIME will convey different meanings in JavaScript.</dt>
+                <dt class="main-text "><span class="bold">JavaScript values </span>- In JavaScript there are two types
+                    of values. <div class="imageCode"><img src="../image/jsImages/javascriptvalues.png" alt=""></div>
+                </dt>
+            </dl>
+            <br>
+            <hr>
+            <h3 class="h3-heading">
+                JavaScript Variables, data types, type casting, ...
+            </h3>
+            <p class="bold">Syntax</p>
+            <p class="main-text">JavaScript variables are used to store data that can be changed later on. These
+                variables can be thought of as named containers. You can place data into these containers and then refer
+                to the data simply by naming the container.
+
+                Before you use a variable in a JavaScript program, you must declare it. In JavaScript, you can declare
+                the variables in 4 ways −
+            <div class="imageCode"><img src="../image/jsImages/javaScriptvariables.png" alt=""></div>
+            </p>
+
+            <p class="bold">JavaScript Data Types</p>
+            <p class="main-text">In JavaScript, the variable can hold the value of the dynamic data type. For example,
+                you can store the value of number, string, boolean, object, etc. data type values in JavaScript
+                variables.</p>
+            <div class="imageCode"><img src="../image//jsImages/jsDatatypes.png" alt=""></div>
+            <p class="bold">JavaScript Dollar Sign($) and Under Score(_)</p>
+            <p class="main-text">You can use the $ and _ to define the variables in JavaScript, as the JavaScript engine
+                considers it a valid character.</p>
+            <p class="bold">JavaScript Type Conversion</p>
+            <p class="main-text">Type Conversions in JavaScript refer to the automatic or explicit process of converting
+                data from one data type to another in JavaScript. These conversions are essential for JavaScript to
+                perform operations and comparisons effectively. JavaScript variables can contain the values of any data
+                type as it is a weakly typed language.</p>
+            <p class="bold">Conversion Table in JavaScript.</p>
+            <p class="main-text">In the below table, we have given the original values and their resultant value when we
+                convert the original value to string, number, and boolean.
+            <div class="imageCode"><img src="../image/jsImages/jstypeconversion.png" alt=""></div>
+            </p>
+            <br>
+
+            </p>
+            <br>
+            <hr />
+            <h3 class="h3-heading">JavaScript Operators</h3>
+            <p class="bold"><br>
+                <li>Arithmetic Operators
+                    <p class="main-text">
+                    <div class="imageCode"><img src="../image/jsImages/jsArithmeticOperators.png" alt=""></div>
+            </p>
+            </li>
+            <li>Assignment Operators
+                <p class="main-text">
+                <div class="imageCode"><img src="../image/jsImages/Assignment.png" alt=""></div>
+                </p>
+            </li>
+            <li>Comparison Operators
+                <p class="main-text">
+                <div class="imageCode"><img src="../image/jsImages/comparisonOperators.png" alt=""></div>
+                </p>
+            </li>
+            <li>Logical Operators
+                <p class="main-text">
+                <div class="imageCode"><img src="../image/jsImages/logical.png" alt=""></div>
+                </p>
+            </li>
+            <li>Bitwise Operators
+                <p class="main-text" id="input">
+                <div class="imageCode"><img src="../image/jsImages/bitwise.png" alt=""></div>
+                </p>
+            </li>
+            <p class="bold" id="if">Two types of Comments </p><br>
+            <ol>
+                <li>Single-line comments(// Lorem, ipsum dolor. )</li>
+                <li>Multiline comments(/* Lorem, ipsum dolor. */)</li>
+                <br>
+                <hr><br>
+                <h3 class="h3-heading">Decision Making</h3>
+                <p class="bold">if-else</p>
+                <p class="main-text">Following is the syntax of an if... else statement - </p>
+                <div class="imageCode"><img src="../image/jsImages/ifelse.png" alt=""></div>
+                <p class="bold" id="loop">Switch Statement</p>
+                <p class="main-text">The syntax of JavaScript switch statement is -</p>
+                <div class="imageCode"><img src="../image/jsImages/switch.png" alt=""></div>
+                <br>
+                <hr><br>
+                <h3 class="h3-heading">Loops, and loop statements</h3>
+                <li class="bold">For Loops</li>
+                <div class="imageCode"><img src="../image/jsImages/forLoop.png" alt=""></div>
+                <li class="bold">For... in Loop</li>
+                <div class="imageCode"><img src="../image/jsImages/forinLoop.png" alt=""></div>
+                <li class="bold">For... of Loop</li>
+                <div class="imageCode"><img src="../image/jsImages/forOfLoop.png" alt=""></div>
+                <li class="bold">While Loop</li>
+                <div class="imageCode"><img src="../image/jsImages/whileLoop.png" alt=""></div>
+                <li class="bold">Do While Loop</li>
+                <div class="imageCode"><img src="../image/javaImages/doWhile.png" alt=""></div>
+                <li class="bold">Break</li>
+                <div class="imageCode"><img src="../image/jsImages/break.png" alt=""></div>
+                <li class="bold">Continue</li>
+                <div class="imageCode" id="string"><img src="../image/jsImages/continue.png" alt=""></div><br>
+                <hr><br>
+                <h3 class="h3-heading">JavaScript Functions </h3>
+                <p class="main-text">A function in JavaScript is a group of reusable code that can be called anywhere in
+                    your program. It eliminates the need of writing the same code again and again. It helps programmers
+                    in writing modular codes. Functions allow a programmer to divide a big program into a number of
+                    small and manageable functions.</p>
+                <p class="bold">Function Definition</p>
+                <p class="main-text">Before we use a function, we need to define it. The most common way to define a
+                    function in JavaScript is by using the function keyword, followed by a unique function name, a list
+                    of parameters (that might be empty), and a statement block surrounded by curly braces.</p>
+                <p class="main-text">
+                <div class="imageCode"><img src="../image/jsImages/functionDefinition.png" alt=""></div>
+                </p>
+                <h3 class="h3-heading">Class, objecs, methods</h3>
+                <p class="bold">JavaScript Classes</p>
+                <p class="main-text">The JavaScript classes are a blueprint or template for object creation. They
+                    encapsulate the data and functions to manipulate that data. We can create the object using classes.
+                    Creating an object from a class is referred to as instantiating the class. In JavaScript, the
+                    classes are built on prototypes. The classes are introduced to JavaScript in ECMAScript 6 (ES6) in
+                    2009.</p>
+                <div class="imageCode"><img src="../image/jsImages/class.png" alt=""></div>
+                <p class="bold">Syntax to create a JavaScript object</p>
+                <div class="imageCode"><img src="../image/jsImages/object.png" alt=""></div><br>
+                <hr><br>
+                <h3 class="h3-heading">Constructors</h3>
+                <p class="main-text">Example of Constructor.</p>
+                <div class="imageCode" id="inheritance"><img src="../image/jsImages/constructor.png" alt=""></div><br>
+                <hr><br>
+                <h3 class="h3-heading">Inheritance</h3>
+                <p class="main-text">Syntax to implement inheritance</p>
+                <div class="imageCode" style="margin-bottom: -6px; padding-bottom: 0;"><img
+                        style="margin-bottom: 0; padding-bottom: 0;" src="../image/jsImages/javaScriptinheritnce1.png"
+                        alt=""></div>
+                <div class="imageCode" style="margin-top:-2px; padding-top:0;"><img style="margin-top:0; padding-top:0;"
+                        src="../image/jsImages/javaScriptinheritnce2.png" alt=""></div><br><br><br>
+        </div>
+
+    </div>
+    <div class="footer"></div>
+    <script>
+        function toggleMenu() {
+            document.getElementById('labelMenu').classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>

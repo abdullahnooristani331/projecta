@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Cheetsheat</title>
+    <style>
+        @font-face {
+            font-family: 'Pacifico';
+            src: url('../fonts/Pacifico-Regular.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: "Andada";
+            src: url('../fonts/AndadaPro-Italic-VariableFont_wght.ttf')format('truetype');
+        }
+
+        @font-face {
+            font-family: "man";
+            src: url('../fonts/Manrope-VariableFont_wght.ttf')format('truetype');
+        }
+
+        * {
+            color: black;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Andada";
+            text-align: justify;
+
+        }
+
+        .top {
+            position: fixed;
+            height: 200px;
+            width: 100%;
+            z-index: 200;
+        }
+
+        .nav {
+            height: 80px;
+            background-color: dodgerblue;
+            font-size: 20px;
+            font-weight: 700;
+            border: 0.1px solid black;
+            border-top: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .right,
+        .left {
+            margin: 10px;
+            padding: 10px;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid white;
+            border: none;
+        }
+
+        .navbar li a:hover {
+            color: black;
+        }
+
+        .abdullah {
+            margin-top: 10px;
+            display: block;
+        }
+
+        .abd {
+            font-family: "Pacifico";
+            color: white;
+        }
+
+        .label {
+            background-color: lightgoldenrodyellow;
+            border-bottom: solid 5px dodgerblue;
+            display: flex;
+        }
+
+        .label .itemLabel {
+            padding: 8px;
+
+        }
+
+        .label .itemLabel:hover {
+            cursor: pointer;
+            background-color: rgb(232, 232, 187);
+        }
+
+        .hero {
+            display: flex;
+            font-size: 1.1rem;
+        }
+
+
+        .leftHero ul li {
+            list-style-type: none;
+            padding: 5px;
+            border: 0.5px solid black;
+        }
+
+        .leftHero ul li:first-child {
+            border-radius: 4px 4px 0px 0px;
+        }
+
+        .leftHero ul li:last-child {
+            border-radius: 0px 0px 4px 4px;
+        }
+
+        .leftHero ul li:hover {
+            cursor: pointer;
+            background-color: lightgoldenrodyellow;
+        }
+
+        .sidebar {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            width: 25%;
+            height: 120vh;
+            background-color: lightgoldenrodyellow;
+
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            box-shadow: 0px 0px 10px black;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar ul li:hover {
+            background-color: rgb(232, 232, 187);
+        }
+
+        .sidebar ul li {
+            margin: 7px;
+            padding: 7px;
+        }
+
+        .sidebar ul a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .main-content {
+            width: 75%;
+            padding-left: 10px;
+            padding-right: 40px;
+            margin-left: 30%;
+            padding-top: 140px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .image {
+            padding-bottom: 10px;
+        }
+
+        .h3-heading {
+            color: rgb(46, 42, 42);
+            margin: 10px 0 10px 0;
+            font-size: 1.5rem;
+        }
+
+        .main-text {
+            font-family: 'man';
+            font-size: 1.1rem;
+        }
+
+        .imageCode {
+            padding-top: 10px;
+        }
+
+        .bold {
+            font-size: 1.3rem;
+            font-family: "Andada";
+            font-weight: 900;
+        }
+
+        .footer {
+            z-index: 300;
+            width: 100%;
+            margin-top: 50px;
+            height: 300px;
+            background-color: dodgerblue;
+
+        }
+
+        .right a {
+            text-decoration: none;
+            color: white;
+        }
+
+        body {
+            zoom: 90%
+        }
+
+        .right {
+            display: flex;
+        }
+
+        .label a {
+            text-decoration: none;
+        }
+
+        @media (max-width: 900px) {
+
+            .sidebar,
+            .leftHero.sidebar {
+                display: none !important;
+            }
+
+            .main-content {
+                width: 100% !important;
+                margin-left: 0 !important;
+                padding-left: 2vw !important;
+                padding-right: 2vw !important;
+            }
+
+            .hero {
+                flex-direction: column !important;
+                align-items: stretch !important;
+            }
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+            margin: 10px;
+            color: white;
+        }
+
+        @media (max-width: 900px) {
+            .label {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                width: 100%;
+                background: dodgerblue;
+                z-index: 1000;
+            }
+
+            .label.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .left {
+                display: none !important;
+            }
+
+            .abd {
+                font-size: 1rem;
+            }
+
+            .right {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .label {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                width: 100%;
+                background: dodgerblue;
+                z-index: 1000;
+            }
+
+            .label a div {
+                color: white;
+            }
+
+
+            .label.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .main-content,
+            .file-container,
+            .hero-header {
+                padding-left: 2vw !important;
+                padding-right: 2vw !important;
+                margin-left: 0 !important;
+                width: 100% !important;
+                flex-direction: rows !important;
+                align-items: stretch !important;
+            }
+
+            .file-card {
+                width: 90vw;
+                height: auto;
+                min-width: 0;
+            }
+
+            .headery {
+                width: 95vw;
+                font-size: 1.1rem;
+                padding: 5px;
+            }
+
+            .footer,
+            .nav,
+            .top {
+                font-size: 1em;
+                flex-direction: column;
+                height: auto;
+            }
+
+            .right {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0;
+                padding: 5px;
+            }
+
+            .abd {
+                font-size: 1rem !important;
+            }
+
+            .file-card img {
+                width: 100%;
+            }
+        }
+
+
+        .hero {
+            padding: 0px 10px 0px 10px;
+        }
+
+        :root {
+            --header-height: 130px;
+        }
+
+        .center {
+            margin-top: var(--header-height);
+        }
+
+        img,
+        audio,
+        video,
+        iframe {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+
+        <div class="nav">
+
+            <div class="right">
+                <a href="../index.html">
+                    <img src="../image/mainPageImage/home_12074276.png"
+                        style="border: 1px solid white; border-radius: 50%; padding: 2px;" height="50" width="50"
+                        alt="">
+                </a>
+                <div style="width: 70px;"></div>
+                <img src="../image/mainPageImage/abdullahNooristani.png" width="40" height="50"
+                    style=" margin-left:10px;border-radius: 10px;" alt="">
+                <div style="width: 10px;"></div>
+                <h2 class="abd"> Abdullah Nooristani</h2>
+                <div style="width: 70px;"></div>
+                <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+            </div>
+        </div>
+        <div class="label" id="labelMenu">
+            <a href="./html.html">
+                <div class="itemLabel">HTML</div>
+            </a>
+            <a href="./css.html">
+                <div class="itemLabel">CSS</div>
+            </a>
+            <a href="./js.html">
+                <div class="itemLabel">JAVASCRIPT</div>
+            </a>
+            <a href="./presentation.html">
+                <div class="itemLabel">PRESENTATIONS</div>
+            </a>
+            <a href="./cplusplus.html">
+                <div class="itemLabel">C++</div>
+            </a>
+            <a href="./java.html">
+                <div class="itemLabel">JAVA</div>
+            </a>
+            <a href="./DSAProject/dsaProject.html">
+                <div class="itemLabel">DSA PROJECT</div>
+            </a>
+            <a href="./paperHomeworks.html">
+                <div class="itemLabel">DSA PAPAER HOMEWORKS</div>
+            </a>
+
+            <a href="./WebProject/html/index.html" target="_blank">
+                <div class="itemLabel">WEB PROJECT</div>
+            </a>
+            <a href="./paperHomeworks.html">
+                <div class="itemLabel">WEB PAPAER HOMEWORKS</div>
+            </a>
+
+        </div>
+
+
+    </div>
+    <div class="hero">
+
+        <div class="leftHero sidebar">
+            <ul>
+                <a href="#top">
+                    <li>C++ Overview and History</li>
+                </a>
+                <a href="#hello">
+                    <li>C++ Hello World Program</li>
+                </a>
+                <a href="#basic">
+                    <li>C++ very basic syntax</li>
+                </a>
+                <a href="#variables">
+                    <li>C++ variables, data types, type casting, ...</li>
+                </a>
+                <a href="#input">
+                    <li>C++ User Input, C++ Comments</li>
+                </a>
+                <a href="#if">
+                    <li>C++ Decision Making (if, else, switch)</li>
+                </a>
+                <a href="#loop">
+                    <li>C++ Loops, and Loops statements</li>
+                </a>
+                <a href="#string">
+                    <li>C++ Strings</li>
+                </a>
+                <a href="#class">
+                    <li>C++ Classes, Objects, and Methods</li>
+                </a>
+                <a href="#constructor">
+                    <li>C++ Constructors</li>
+                </a>
+                <a href="#inheritance">
+                    <li>C++ Inheritance</li>
+                </a>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <h1>C++ &ThinSpace;&ThinSpace; Cheetsheat and Basics Syntax</h1>
+                <div style="width: 50px;"></div>
+                <div class="image">
+                    <img src="../image/mainPageImage/C++.png" height="90" width="90" alt="java Image">
+                </div>
+            </div>
+            <hr>
+            <h3 class="h3-heading" id="overview">C++ Overview </h3>
+            <p class="main-text">C++ is a statically typed, compiled, general-purpose, case-sensitive, free-form
+                programming language that supports procedural, object-oriented, and generic programming. <br> C++ is
+                regarded as a middle-level language, as it comprises a combination of both high-level and low-level
+                language features. <br> C++ is a superset of C, and that virtually any legal C program is a legal C++
+                program.</p>
+            <p class="main-text">Java is Object-Oriented, Platform Indpendent, Simple, Secure, Portable, Robust,
+                Intrepreted, HighPerformance, Dynamic</p><br>
+            <hr>
+            <h3 class="h3-heading">A brief History about C++</h3>
+            <p class="main-text" id="hello">
+                C++ is a middle-level programming language developed by Bjarne Stroustrup starting in 1979 at Bell Labs.
+                C++ runs on a variety of platforms, such as Windows, Mac OS, and the various versions of UNIX. C++ is an
+                extension of the C programming language with object-oriented programming concepts. Or, we can say, "C++
+                is a superset of C programming with additional implementation of object-oriented concepts".
+            </p><br>
+            <hr>
+            <h3 class="h3-heading">
+                C++ Hello World Program
+            </h3>
+            <p class="main-text">Printing "Hello World" on the output screen (console) is the first program in C plus
+                plus and other programming languages. This tutorial will teach you how you can write your first program
+                (print "Hello World" program) in Java programming.</p>
+            <div class="imageCode" id="basic">
+                <img src="../image/cppImages/helloCpp.png" alt="">
+            </div>
+            <div class="imageCode"><img src="../image/cppImages/cppheaders.png" alt=""></div>
+            <br>
+            <hr>
+            <h3 class="h3-heading">
+                C++ Basic Syntax
+            </h3>
+            <dl>
+                <dt class="main-text"><span class="bold">Object</span>Objects have states and behaviors. Example: A dog
+                    has states (color, name, breed) as well as behaviors (wagging, barking, eating). An object is an
+                    instance of a class. </dt>
+                <dt class="main-text "><span class="bold">Class</span> - A class can be defined as a template/blueprint
+                    that describes the behaviors or states that object of its type supports.</dt>
+                <dt class="main-text "><span class="bold">Methods</span> - A method is basically a behavior. A class can
+                    contain many methods. It is in methods where the logics are written, data is manipulated and all the
+                    actions are executed. </dt>
+                <dt class="main-text "><span class="bold">Instance Variables </span>- Each object has its unique set of
+                    instance variables. An object's state is craeted by the values assigned to these instance variables.
+                </dt>
+                <dt class="main-text "><span class="bold">Semicolons and Blocks in C++</span>-In C++, the semicolon is a
+                    statement terminator. That is, each individual statement must be ended with a semicolon. It
+                    indicates the end of one logical entity. <br>
+                    A block is a set of logically connected statements that are surrounded by opening and closing
+                    braces.</dt>
+                <dt class="main-text bold">C++ program structure</dt>
+                <dt class="main-text">
+                    <div class="imageCode"><img src="../image/cppImages/cppi.png" alt=""></div>
+                </dt>
+            </dl>
+            <br>
+            <hr>
+            <h3 class="h3-heading">
+                C++ Variables, data types, type casting, ...
+            </h3>
+            <p class="bold">Types of Variables</p>
+            <div class="imageCode"><img src="../image//cppImages/typeOfvariablecpp.png" alt=""></div>
+            <p class="main-text">C++ syntax to initialize a variable</p>
+            <div class="imageCode"><img src="../image/cppImages/syntaxVariableInitialization.png" alt=""></div>
+            <p class="bold">There are two types of type casting allowed in Java Programming:</p>
+            <li>Widening type casting</li>
+            <p class="main-text">Widening type casting is also known as implicit type casting in which a smaller type is
+                converted into a larger type, it is done by the compiler automatically.</p>
+            <div class="imageCode"><img src="../image//javaImages/javatypecasting.png" alt=""></div>
+            <li>Narrowing type casting</li>
+            <p class="main-text">Narrowing type casting is also known as explicit type casting or explicit type
+                conversion which is done by the programmer manually. In the narrowing type casting a larger type can be
+                converted into a smaller type.
+                When a programmer changes the variable type while writing the code. We can use the cast operator to
+                change the type of the variable. For example, double to int or int to double.</p>
+            <div class="imageCoding"><br><img src="../image/javaImages/manuallyTypeConversion.png" alt=""></div>
+            <br>
+            <p class="bold">Basic Operators</p>
+            <p class="bold"><br>
+                <li>Arithmetic Operators
+                    <p class="main-text">
+                    <div class="imageCode"><img src="../image/cppImages/arithmeticOperators.png" alt=""></div>
+            </p>
+            </li>
+            <li>Assignment Operators
+                <p class="main-text">
+                <div class="imageCode"><img src="../image/cppImages/assignmentOperators.png" alt=""></div>
+                </p>
+            </li>
+            <li>Relational Operators
+                <p class="main-text">
+                <div class="imageCode"><img src="../image/cppImages/relationalOperators.png" alt=""></div>
+                </p>
+            </li>
+            <li>Logical Operators
+                <p class="main-text">
+                <div class="imageCode"><img src="../image/cppImages/logicalOperators.png" alt=""></div>
+                </p>
+            </li>
+            <li>Bitwise Operators
+                <p class="main-text" id="input">Bitwise operators are used to perform operations at the bit level on
+                    integer data types. These operations work on direct manipulation of bits, such as low-level
+                    programming, graphics, and cryptography.
+                <div class="imageCode"><img src="../image/cppImages/bitwiseOperators.png" alt=""></div>
+                </p>
+            </li>
+            <li>Misc Operators <p class="main-text">
+                    Miscellaneous operators, often abbreviated as "misc operators", include a variety of operators that
+                    dont fit neatly into other categories like arithmetic or logical operators. Here are some common
+                    miscellaneous operators and their definitions
+                <div class="imageCode"><img src="../image/cppImages/miscOperators.png" alt=""></div>
+                </p>
+                <div class="imageCode"><img src="../image/javaImages/ternary.png" alt=""></div>
+            </li>
+            </p>
+            <br>
+            <hr />
+            <h3 class="h3-heading">Java User Input, Comments</h3>
+            <p class="bold">User Input in Java</p>
+            <p class="main-text">To take input from the user in Java, the Scanner class is used. The Scanner class a
+                built-in class of java.util package.
+                Java Scanner class provides many built-in methods to take different types of user inputs from the users.
+            </p>
+            <div class="imageCode"><img src="../image/javaImages/input.png" alt=""></div>
+            <p class="bold" id="if">Three types of Comments </p><br>
+            <ol>
+                <li>Single-line comments(// Lorem, ipsum dolor. )</li>
+                <li>Multiline comments(/* Lorem, ipsum dolor. */)</li>
+                <li>Documentation comments(/** Lorem, ipsum dolor. **/)</li>
+            </ol>
+            </p>
+            <br>
+            <hr><br>
+            <h3 class="h3-heading">Decision Making</h3>
+            <p class="bold">if-else</p>
+            <p class="main-text">Following is the syntax of an if... else statement - </p>
+            <div class="imageCode"><img src="../image/javaImages/ifelse.png" alt=""></div>
+            <p class="bold" id="loop">Switch Statement</p>
+            <p class="main-text">The syntax of java switch statement is -</p>
+            <div class="imageCode"><img src="../image/javaImages/switch.png" alt=""></div>
+            <br>
+            <hr><br>
+            <h3 class="h3-heading">Loops, and loop statements</h3>
+            <li class="bold">For Loops</li>
+            <div class="imageCode"><img src="../image/cppImages/forloop.png" alt=""></div>
+            <li class="bold">For Each Loop</li>
+            <div class="imageCode"><img src="../image/cppImages/foreach.png" alt=""></div>
+            <li class="bold">While Loop</li>
+            <div class="imageCode"><img src="../image/cppImages/whileLoop.png" alt=""></div>
+            <li class="bold">Do While Loop</li>
+            <div class="imageCode"><img src="../image/cppImages/dowhile.png" alt=""></div>
+            <li class="bold">Break</li>
+            <div class="imageCode"><img src="../image/cppImages/break.png" alt=""></div>
+            <li class="bold">Continue</li>
+            <div class="imageCode" id="string"><img src="../image/cppImages/continue.png" alt=""></div><br>
+            <hr><br>
+            <h3 class="h3-heading">C++ Strings </h3>
+            <p class="main-text">C++ provides following two types of string representations.</p>
+            <div class="imageCode" id="class"><img src="../image/cppImages/typesOfStringin CPPp.png" alt=""></div>
+            <p class="bold">
+            <div class="imageCode"><img src="../image/cppImages/typesofstringin cpp.png" alt=""></div>
+            </p>
+            <p class="bold">Like C Strings
+            <div class="imageCode"><img src="../image/cppImages/cstylestring.png" alt=""></div>
+            </p>
+            <p class="bold">Using String class
+            <div class="imageCode"><img src="../image/cppImages/stringclassincpp.png" alt=""></div>
+            </p>
+
+            <br>
+            <hr><br>
+            <h3 class="h3-heading">Class, objecs, methods</h3>
+            <p class="bold">Syntax to create a Java class</p>
+            <p class="main-text">Use the below syntax to create (declare) class in Java:</p>
+            <div class="imageCode"><img src="../image/javaImages/classSyntax.png" alt=""></div>
+            <p class="bold">Syntax to create a Java object</p>
+            <div class="imageCode"><img src="../image/javaImages/object.png" alt=""></div>
+            <p class="bold">Syntax to create a Java Method</p>
+            <div class="imageCode" id="constructor"><img src="../image/javaImages/method.png" alt=""></div><br>
+            <hr><br>
+            <h3 class="h3-heading">Constructors</h3>
+            <p class="main-text">Example of Constructor that will print hello world.</p>
+            <div class="imageCode" id="inheritance"><img src="../image/javaImages/constructor.png" alt=""></div><br>
+            <hr><br>
+            <h3 class="h3-heading">Inheritance</h3>
+            <p class="main-text">Syntax to implement inheritance</p>
+            <div class="imageCode"><img src="../image/javaImages/inheritance.png" alt=""></div><br><br><br>
+
+        </div>
+
+    </div>
+    <div class="footer"></div>
+    <script>
+        function toggleMenu() {
+            document.getElementById('labelMenu').classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>

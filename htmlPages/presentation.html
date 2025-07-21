@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'Pacifico';
+            src: url('../fonts/Pacifico-Regular.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: "Andada";
+            src: url('../fonts/AndadaPro-Italic-VariableFont_wght.ttf');
+        }
+
+        * {
+            color: black;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Andada", sans-serif;
+
+        }
+
+
+        .nav {
+            height: 80px;
+            background-color: dodgerblue;
+            font-size: 20px;
+            font-weight: 700;
+            border: 0.1px solid black;
+            border-top: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .heading {
+            font-family: "Andada", sans-serif !important;
+            text-align: center;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 0px;
+        }
+
+        .header {
+            padding-bottom: 20px;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            height: 300px;
+            background-color: dodgerblue;
+        }
+
+
+        .abd {
+            font-family: "Pacifico";
+            color: white;
+        }
+
+        .label a {
+            text-decoration: none;
+        }
+
+        .label {
+            background-color: lightgoldenrodyellow;
+            border-bottom: solid 5px dodgerblue;
+            display: flex;
+        }
+
+        .label .itemLabel {
+            padding: 8px;
+
+        }
+
+        .label .itemLabel:hover {
+            cursor: pointer;
+            background-color: rgb(232, 232, 187);
+        }
+
+        .label .itemLabel a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .file-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .file-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .file-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .file-card h3 {
+            margin: 10px 0 5px;
+        }
+
+        .file-card p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .btn-group {
+            margin-top: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 15px;
+            font-size: 14px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-view {
+            background-color: #28a745;
+        }
+
+        .btn-download {
+            background-color: #007bff;
+        }
+
+        .right {
+            display: flex;
+        }
+
+        body {
+            zoom: 90%;
+        }
+
+        @media (max-width: 900px) {
+
+            .sidebar,
+            .leftHero.sidebar {
+                display: none !important;
+            }
+
+            .main-content {
+                width: 100% !important;
+                margin-left: 0 !important;
+                padding-left: 2vw !important;
+                padding-right: 2vw !important;
+            }
+
+            .hero {
+                flex-direction: column !important;
+                align-items: stretch !important;
+            }
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 2em;
+            cursor: pointer;
+            margin: 10px;
+            color: white;
+        }
+
+        @media (max-width: 900px) {
+            .label {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                width: 100%;
+                background: dodgerblue;
+                z-index: 1000;
+            }
+
+            .label.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .left {
+                display: none !important;
+            }
+
+            .abd {
+                font-size: 1rem;
+            }
+
+            .right {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .label {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                width: 100%;
+                background: dodgerblue;
+                z-index: 1000;
+            }
+
+            .label a div {
+                color: white;
+            }
+
+
+            .label.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .main-content,
+            .file-container,
+            .hero-header {
+                padding-left: 2vw !important;
+                padding-right: 2vw !important;
+                margin-left: 0 !important;
+                width: 100% !important;
+                flex-direction: rows !important;
+                align-items: stretch !important;
+            }
+
+            .file-card {
+                width: 90vw;
+                height: auto;
+                min-width: 0;
+            }
+
+            .headery {
+                width: 95vw;
+                font-size: 1.1rem;
+                padding: 5px;
+            }
+
+            .footer,
+            .nav,
+            .top {
+                font-size: 1em;
+                flex-direction: column;
+                height: auto;
+            }
+
+            .right {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0;
+                padding: 5px;
+            }
+
+            .abd {
+                font-size: 1rem !important;
+            }
+
+            .file-card img {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .abd {
+                font-size: 1rem !important;
+            }
+        }
+
+
+        :root {
+            --header-height: 130px;
+        }
+
+        .center {
+            margin-top: var(--header-height);
+        }
+
+        img,
+        audio,
+        video,
+        iframe {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top">
+        <div class="nav">
+
+            <div class="right">
+                <a href="../index.html">
+                    <img src="../image/mainPageImage/home_12074276.png"
+                        style="border: 1px solid white; border-radius: 50%; padding: 2px;" height="50" width="50"
+                        alt="">
+                </a>
+                <div style="width: 70px;"></div>
+                <img src="../image/mainPageImage/abdullahNooristani.png" width="40" height="50"
+                    style=" margin-left:10px;border-radius: 10px;" alt="">
+                <div style="width: 10px;"></div>
+                <h2 class="abd"> Abdullah Nooristani</h2>
+                <div style="width: 70px;"></div>
+                <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+            </div>
+
+        </div>
+        <div class="label" id="labelMenu">
+            <a href="./html.html">
+                <div class="itemLabel">HTML</div>
+            </a>
+            <a href="./css.html">
+                <div class="itemLabel">CSS</div>
+            </a>
+            <a href="./js.html">
+                <div class="itemLabel">JAVASCRIPT</div>
+            </a>
+            <a href="./presentation.html">
+                <div class="itemLabel">PRESENTATIONS</div>
+            </a>
+            <a href="./cplusplus.html">
+                <div class="itemLabel">C++</div>
+            </a>
+            <a href="./java.html">
+                <div class="itemLabel">JAVA</div>
+            </a>
+
+            <a href="./DSAProject/dsaProject.html">
+                <div class="itemLabel">DSA PROJECT</div>
+            </a>
+            <a href="./paperHomeworks.html">
+                <div class="itemLabel">DSA PAPAER HOMEWORKS</div>
+            </a>
+
+            <a href="./WebProject/html/index.html" target="_blank">
+                <div class="itemLabel">WEB PROJECT</div>
+            </a>
+            <a href="./DSAProject/dsaProject.html">
+                <div class="itemLabel">WEB PAPAER HOMEWORKS</div>
+            </a>
+
+        </div>
+        <div style="margin-top: 40px;">
+            <div class="heading">
+                <h2>Presentations in Semester 4 from DSA and WEB </h2>
+                <div style="width: 40px;"></div>
+                <img src="../image/mainPageImage/prsentation.png" height="100" width="100" alt="">
+            </div>
+            <div class="header">
+                <p>In 4th semester we have 3 presentations, anyone can download or open it as a pdf file.</p>
+            </div>
+            <div class="file-container">
+                <div class="file-card">
+                    <img src="../presentations/timSort.png" alt="PDF Thumbnail">
+                    <h3>Tim Sort Presentation</h3>
+                    <p>This presentation is about Tim Sort, a hybrid and smart algorithm, applications, usage in python,
+                        java, and also android and kotlin.</p>
+                    <div class="btn-group">
+                        <a href="../presentations/timSort.pdf" class="btn btn-view" target="_blank">Open PDF</a>
+                    </div>
+                </div>
+                <div class="file-card">
+                    <img src="../presentations/reactnativeexpo.png" alt="PPT Thumbnail">
+                    <h3>React Native Expo</h3>
+                    <p>This presentation is about react native expo, introduction about expo react native, building an
+                        application.</p>
+                    <div class="btn-group">
+                        <a href="../presentations/srs_template.pdf" class="btn btn-view" target="_blank">Open PDF</a>
+                    </div>
+                </div>
+                <div class="file-card">
+                    <img src="../presentations/gammahttps.png" alt="Word Thumbnail">
+                    <h3>HTTPS, TLS, SSL Protocols</h3>
+                    <p>HTTPS, TLS, SSL Protocols three basic, elementary, and so important protocols in web development
+                        and web structure.</p>
+                    <div class=btn-group>
+                        <a href="../presentations/SSLTLS.pdf" class="btn btn-view" target="_blank">Open PDF</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="footer">
+            </div>
+        </div>
+        <script>
+            function toggleMenu() {
+                document.getElementById('labelMenu').classList.toggle('show');
+            }
+        </script>
+
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search Tree Visualizer</title>
+    <link rel="stylesheet" href="bst.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Binary Search Tree Visualizer</h1>
+            <p class="subtitle">
+                Visualize and interact with a BST.<br>
+                <span class="ds-theory">
+                    A Binary Search Tree (BST) is a binary tree in which each node has a value greater than all values
+                    in its left subtree and less than all values in its right subtree.
+                </span>
+            </p>
+        </header>
+
+        <section class="theory-section">
+            <h2>What is a Binary Search Tree?</h2>
+            <p>
+                A <strong>Binary Search Tree</strong> (BST) is a node-based binary tree data structure with the
+                following properties:
+            </p>
+            <ul>
+                <li><strong>Left Subtree:</strong> All values less than the current node.</li>
+                <li><strong>Right Subtree:</strong> All values greater than the current node.</li>
+                <li><strong>No Duplicate Values</strong> (in classic BSTs).</li>
+            </ul>
+            <h3>Supported Operations & Algorithms</h3>
+            <ul>
+                <li>Insert</li>
+                <li>Delete</li>
+                <li>Search</li>
+                <li>Update</li>
+                <li>Find Min/Max</li>
+                <li>Find Height</li>
+                <li>Inorder/Preorder/Postorder Traversal</li>
+                <li>Level Order Traversal (BFS)</li>
+                <li>Clear</li>
+            </ul>
+            <h3>Big O Complexity Table</h3>
+            <div class="table-responsive">
+                <table class="bigo-table">
+                    <thead>
+                        <tr>
+                            <th>Operation</th>
+                            <th>Average</th>
+                            <th>Worst</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Insert</td>
+                            <td>O(log n)</td>
+                            <td>O(n)</td>
+                        </tr>
+                        <tr>
+                            <td>Delete</td>
+                            <td>O(log n)</td>
+                            <td>O(n)</td>
+                        </tr>
+                        <tr>
+                            <td>Search</td>
+                            <td>O(log n)</td>
+                            <td>O(n)</td>
+                        </tr>
+                        <tr>
+                            <td>Traversals</td>
+                            <td>O(n)</td>
+                            <td>O(n)</td>
+                        </tr>
+                        <tr>
+                            <td>Find Min/Max</td>
+                            <td>O(log n)</td>
+                            <td>O(n)</td>
+                        </tr>
+                        <tr>
+                            <td>Height</td>
+                            <td>O(log n)</td>
+                            <td>O(n)</td>
+                        </tr>
+                        <tr>
+                            <td>Clear</td>
+                            <td>O(1)</td>
+                            <td>O(1)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="controls-section">
+            <div class="row op-row">
+                <div>
+                    <label>Insert</label>
+                    <input type="number" id="insert-value" placeholder="Value">
+                    <button onclick="insert()">Insert</button>
+                </div>
+                <div>
+                    <label>Delete</label>
+                    <input type="number" id="delete-value" placeholder="Value">
+                    <button onclick="deleteNode()">Delete</button>
+                </div>
+                <div>
+                    <label>Search</label>
+                    <input type="number" id="search-value" placeholder="Value">
+                    <button onclick="search()">Search</button>
+                </div>
+                <div>
+                    <label>Update</label>
+                    <input type="number" id="update-old" placeholder="Old Value">
+                    <input type="number" id="update-new" placeholder="New Value">
+                    <button onclick="update()">Update</button>
+                </div>
+            </div>
+            <div class="row op-row">
+                <div>
+                    <label>Find Min</label>
+                    <button onclick="findMin()">Find Min</button>
+                </div>
+                <div>
+                    <label>Find Max</label>
+                    <button onclick="findMax()">Find Max</button>
+                </div>
+                <div>
+                    <label>Height</label>
+                    <button onclick="findHeight()">Height</button>
+                </div>
+                <div>
+                    <label>Clear</label>
+                    <button onclick="clearTree()">Clear</button>
+                </div>
+            </div>
+            <div class="row op-row">
+                <div>
+                    <label>Inorder</label>
+                    <button onclick="traverse('inorder')">Inorder</button>
+                </div>
+                <div>
+                    <label>Preorder</label>
+                    <button onclick="traverse('preorder')">Preorder</button>
+                </div>
+                <div>
+                    <label>Postorder</label>
+                    <button onclick="traverse('postorder')">Postorder</button>
+                </div>
+                <div>
+                    <label>Level Order</label>
+                    <button onclick="traverse('levelorder')">Level Order</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="bst-container" class="bst-container"></div>
+        <div id="status" class="status"></div>
+    </div>
+    <footer>
+        <div class="footer-note">
+            <span>Made with ❤️ for Data Structures & Algorithms learning.</span>
+        </div>
+    </footer>
+    <script src="bst.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack Visualizer</title>
+    <link rel="stylesheet" href="./stack.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Stack Data Structure Visualizer</h1>
+            <p class="subtitle">
+                Visualize and interact with a stack.<br>
+                <span class="ds-theory">A stack is a linear data structure that follows the Last-In-First-Out (LIFO)
+                    principle. Only the top element can be accessed, inserted, or removed.</span>
+            </p>
+        </header>
+
+        <section class="theory-section">
+            <h2>What is a Stack?</h2>
+            <p>
+                A <strong>stack</strong> is a linear data structure where elements are added and removed from only one
+                end, called the <b>top</b>. It is widely used for function call management, undo operations, and parsing
+                expressions.
+            </p>
+            <ul>
+                <li><strong>LIFO Principle:</strong> Last-In-First-Out.</li>
+                <li><strong>Push:</strong> Add an element to the top.</li>
+                <li><strong>Pop:</strong> Remove the top element.</li>
+                <li><strong>Peek:</strong> View the top element without removing it.</li>
+                <li><strong>IsEmpty/IsFull:</strong> Check stack status.</li>
+            </ul>
+            <h3>Big O Complexity Table</h3>
+            <div class="table-responsive">
+                <table class="bigo-table">
+                    <thead>
+                        <tr>
+                            <th>Operation</th>
+                            <th>Description</th>
+                            <th>Time Complexity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Push</td>
+                            <td>Add element to top</td>
+                            <td>O(1)</td>
+                        </tr>
+                        <tr>
+                            <td>Pop</td>
+                            <td>Remove top element</td>
+                            <td>O(1)</td>
+                        </tr>
+                        <tr>
+                            <td>Peek</td>
+                            <td>View top element</td>
+                            <td>O(1)</td>
+                        </tr>
+                        <tr>
+                            <td>IsEmpty</td>
+                            <td>Check if stack is empty</td>
+                            <td>O(1)</td>
+                        </tr>
+                        <tr>
+                            <td>IsFull</td>
+                            <td>Check if stack is full</td>
+                            <td>O(1)</td>
+                        </tr>
+                        <tr>
+                            <td>Traverse</td>
+                            <td>Visit all elements</td>
+                            <td>O(n)</td>
+                        </tr>
+                        <tr>
+                            <td>Clear</td>
+                            <td>Remove all elements</td>
+                            <td>O(n)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="controls-section">
+            <div class="row">
+                <div>
+                    <label for="stack-type"><b>Data Type:</b></label>
+                    <select id="stack-type">
+                        <option value="number">Number</option>
+                        <option value="string">String</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="stack-size"><b>Stack Size:</b></label>
+                    <input type="number" id="stack-size" placeholder="Size" min="1">
+                    <button onclick="initializeStack()">Initialize</button>
+                </div>
+            </div>
+            <div class="row op-row">
+                <div>
+                    <label>Push</label>
+                    <input type="text" id="push-value" placeholder="Value" disabled>
+                    <button id="push-btn" onclick="push()" disabled>Push</button>
+                </div>
+                <div>
+                    <label>Pop</label>
+                    <button id="pop-btn" onclick="pop()" disabled>Pop</button>
+                </div>
+                <div>
+                    <label>Peek</label>
+                    <button id="peek-btn" onclick="peek()" disabled>Peek</button>
+                </div>
+                <div>
+                    <label>Traverse</label>
+                    <button id="traverse-btn" onclick="traverse()" disabled>Traverse</button>
+                </div>
+                <div>
+                    <label>Clear</label>
+                    <button id="clear-btn" onclick="clearStack()" disabled>Clear</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="stack-container" class="stack-container"></div>
+        <div id="status" class="status"></div>
+    </div>
+    <footer>
+        <div class="footer-note">
+            <span>Made with ❤️ for Data Structures & Algorithms learning.</span>
+        </div>
+    </footer>
+    <script src="stack.js"></script>
+</body>
+
+</html>

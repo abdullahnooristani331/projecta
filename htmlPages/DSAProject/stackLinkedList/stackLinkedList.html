@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack (Linked List) Visualizer</title>
+    <link rel="stylesheet" href="stackLinkedList.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Stack (Linked List) Visualizer</h1>
+            <p class="subtitle">
+                Visualize and interact with a stack implemented using a singly linked list.<br>
+                <span class="ds-theory">
+                    A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle. Using a
+                    linked list, push and pop operations are performed at the head for O(1) time.
+                </span>
+            </p>
+        </header>
+
+        <section class="theory-section">
+            <h2>What is a Stack (Linked List)?</h2>
+            <p>
+                A <strong>stack</strong> can be implemented using a singly linked list, where the <b>head</b> of the
+                list is the <b>top</b> of the stack. This allows efficient <b>push</b> and <b>pop</b> operations in
+                constant time.
+            </p>
+            <ul>
+                <li><strong>LIFO Principle:</strong> Last-In-First-Out.</li>
+                <li><strong>Push:</strong> Add an element to the top (head).</li>
+                <li><strong>Pop:</strong> Remove the top element (head).</li>
+                <li><strong>Peek:</strong> View the top element without removing it.</li>
+                <li><strong>IsEmpty:</strong> Check if the stack is empty.</li>
+                <li><strong>Traverse:</strong> Visit all elements from top to bottom.</li>
+                <li><strong>Clear:</strong> Remove all elements.</li>
+            </ul>
+            <h3>Big O Complexity Table</h3>
+            <div class="table-responsive">
+                <table class="bigo-table">
+                    <thead>
+                        <tr>
+                            <th>Operation</th>
+                            <th>Time Complexity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Push</td>
+                            <td>O(1)</td>
+                        </tr>
+                        <tr>
+                            <td>Pop</td>
+                            <td>O(1)</td>
+                        </tr>
+                        <tr>
+                            <td>Peek</td>
+                            <td>O(1)</td>
+                        </tr>
+                        <tr>
+                            <td>IsEmpty</td>
+                            <td>O(1)</td>
+                        </tr>
+                        <tr>
+                            <td>Traverse</td>
+                            <td>O(n)</td>
+                        </tr>
+                        <tr>
+                            <td>Clear</td>
+                            <td>O(1)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="controls-section">
+            <div class="row">
+                <div>
+                    <label for="stack-type"><b>Data Type:</b></label>
+                    <select id="stack-type">
+                        <option value="number">Number</option>
+                        <option value="string">String</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row op-row">
+                <div>
+                    <label>Push</label>
+                    <input type="text" id="push-value" placeholder="Value">
+                    <button onclick="push()">Push</button>
+                </div>
+                <div>
+                    <label>Pop</label>
+                    <button onclick="pop()">Pop</button>
+                </div>
+                <div>
+                    <label>Peek</label>
+                    <button onclick="peek()">Peek</button>
+                </div>
+                <div>
+                    <label>Traverse</label>
+                    <button onclick="traverse()">Traverse</button>
+                </div>
+                <div>
+                    <label>Clear</label>
+                    <button onclick="clearStack()">Clear</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="stack-container" class="stackll-container"></div>
+        <div id="status" class="status"></div>
+    </div>
+    <footer>
+        <div class="footer-note">
+            <span>Made with ❤️ for Data Structures & Algorithms learning.</span>
+        </div>
+    </footer>
+    <script src="stackLinkedList.js"></script>
+</body>
+
+</html>
